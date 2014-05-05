@@ -22,7 +22,7 @@ body
 	display: block;
 	width: 45%;
 	margin-left: 21%;
-	margin-top: 40px;
+	margin-top: 60px;
 	float:left;
 }
 
@@ -49,6 +49,8 @@ body
 	width: 100%;
 	float:left;
 	font-size: 20px;
+	margin-top: 10px;
+	
 	
 
 }
@@ -72,22 +74,33 @@ h2
 #login
 {
 	
-	background-color: #00728e;
+	background-color: white;
 	width:100%;
-	height:40px;
+	height:55px;
 
 }
-form
+#login img
 {
+	width: 50px;
+	float:left;
+	margin-top:2.5px;
+	margin-left: 30px;
+}
+#login form
+{
+	display:block;
+	margin-left: 600px;
 
 }
 #login label
 {
 	display:block;
 	float:left;
-	margin-left: 20px;
-	color:white;
+	margin-left:15px;
+	color:#00728e;
 	font-size:25px;
+	margin-top: 10px;
+
 	
 }
 
@@ -95,7 +108,15 @@ form
 {
 	display: block;
 	float:left;
-	font-size: 20;
-	
+	font-size: 15pxpx;
+	margin-top: 12.5px;	
 
+
+}
+.btn
+{
+	color:white;
+		background-color: #00728e;
+		font-family: "poiret one";
+		font-size: 15px;	
 }
