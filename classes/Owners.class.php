@@ -2,7 +2,7 @@
 
 include_once('classes/Connection.php');
 
-class Owners
+class Owner
 {
 
 private $m_sFirstName;
@@ -68,7 +68,23 @@ public function __set($p_sProperty, $p_vValue)
 
 	}
 
-	
+public function register(){
+
+		$db = new Db();
+		$sql = "insert into Owners (FirstName, LastName, Email, PhoneNumber, Password, City, Street, StreetNumber, PostalCode) values('"
+		 . $db->conn->real_escape_string($this->m_sFirstName). "', '" 
+		 . $db->conn->real_escape_string($this->m_sLastName) ."', '" 
+		 . $db->conn->real_escape_string($this->m_sEmail)	 . "', '"
+		 . $db->conn->real_escape_string($this->m_sPhoneNumber)	 . "', '"
+		 . $db->conn->real_escape_string($this->m_sPassword)	 . "', '"
+		 . $db->conn->real_escape_string($this->m_sCity)	 . "', '"
+		 . $db->conn->real_escape_string($this->m_sStreet)	 . "', '"
+		 . $db->conn->real_escape_string($this->m_sStreetNumber)	 . "', "
+		 . $db->conn->real_escape_string($this->m_iPostalCode)	 . ");";
+
+		$db->conn->query($sql);
+
+}
 
 }
 
