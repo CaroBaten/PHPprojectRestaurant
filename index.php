@@ -1,8 +1,35 @@
 <?php 
 include_once('classes/Owners.class.php');
 
+$owner = new Owner();
+if (!empty($_POST))
+{
+
+	try {
+
+	$pass		= $_POST['password'];
+	$salt = "KZE9323.|@è.==+";
+	$hashed    = md5($pass . $salt);
+
+	$owner->FirstName 		= $_POST['firstname'];
+	$owner->LastName 		= $_POST['name'];
+	$owner->Email 			= $_POST['email'];
+	$owner->PhoneNumber		= $_POST['phonenumber'];
+	$owner->Password 		= $hashed;
+	$owner->City 			= $_POST['city'];
+	$owner->Street 			= $_POST['street'];
+	$owner->PostalCode 		= $_POST['postcode'];
+
+	$owner->register();
+
+	 } catch (Exception $e) {
+    
+      $feedback = $e->getMessage();
+      echo $feedback;
 
 
+    }
+}
 
 
 

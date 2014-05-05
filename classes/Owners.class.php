@@ -62,6 +62,10 @@ public function __set($p_sProperty, $p_vValue)
 
 			case 'PostalCode':
 
+				if( strlen($p_vValue) != 4 ){
+				throw new exception("Geef een correcte postcode");
+			}
+
 			$this->m_iPostalCode = $p_vValue;
 			break;
 		}
