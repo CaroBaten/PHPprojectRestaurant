@@ -16,15 +16,9 @@ include_once('classes/Owners.class.php');
  </head>
  <body>
  	
-	<div id="logo">
-		<img src="images/logo.png" alt="dit is het logo van Restorapp">
-		<h1> Dé applicatie voor restauranthouders én -bezoekers.</p> 
-
-	</div>
-
-
 	<div id="login">
 		
+	
 	<form action="<?php echo $_SERVER['PHP_SELF'];  ?>" method="post">
 
 	<label for="username">Gebruikersnaam</label>
@@ -37,8 +31,40 @@ include_once('classes/Owners.class.php');
 	</form>
 
 	</div>
+	<div class="clearfix">&nbsp;</div>
+
+	<div id="container">
+
+	<div id="logo">
+		<img src="images/logo.png" alt="dit is het logo van Restorapp">
+		<h1> Dé applicatie voor restauranthouders én -bezoekers.</p> 
+
+	</div>
+	<div class="clearfix">&nbsp;</div>
+	
+	<div id="signup">
+	
+	<h2>Nog geen lid ? Meld je nu aan! </h2>
+
+	
+
+		<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+		<input type="text" name="name" placeholder="Naam" />
+		<input type="text" name="firstname" placeholder="Voornaam" />
+		<input type="text" name="street" placeholder="Straat + nr" />
+		<input type="text" name="postcode" placeholder="Postcode" />
+		<input type="text" name="city" placeholder="Plaats" />
+		<input type="text" name="phonenumber" placeholder="Gsm-nummer" />
+		<input type="email" name="email" placeholder="E-mail" />
+		<input type="password" name="password" placeholder="Paswoord" />
+		
+		<input type="submit" name="btnSignup" value="Aanmelden" />
+		</form>
+	</div> <!--end signup-->
 
 
 
+
+	</div> <!-- end div container -->
  </body>
  </html>

@@ -7,17 +7,23 @@
 body
 {
 	font-family: "poiret-one", arial;
+	background-image: url(../images/background.png);}
+.clearfix
+{line-height: 0px;}
 
+#container
+{
+	width: 100%;
 }
 
 #logo
 {
 
 	display: block;
-	width: 350px;
-	margin-left:auto;
-	margin-right: auto;
+	width: 45%;
+	margin-left: 21%;
 	margin-top: 40px;
+	float:left;
 }
 
 #logo img
@@ -26,9 +32,70 @@ body
 
 }
 
-h1
+#signup
 {
+	display: block;
+	width: 28%;
+	float:left;
+	margin-right: 5%;
+	margin-top: 30px;
+
+}
+
+
+#signup input 
+{
+	display: block;
+	width: 100%;
+	float:left;
+	font-size: 20px;
+	
+
+}
+h1
+{	width:350px;
 	font-size: 40px;
 	text-align: center;
 	margin-top: 10px;
+	color:white;
+
+}
+
+h2
+
+{
+	font-size: 25px;
+	text-align: center;
+	margin-top: 10px;
+	color:white;
+}
+#login
+{
+	
+	background-color: #00728e;
+	width:100%;
+	height:40px;
+
+}
+form
+{
+
+}
+#login label
+{
+	display:block;
+	float:left;
+	margin-left: 20px;
+	color:white;
+	font-size:25px;
+	
+}
+
+#login input 
+{
+	display: block;
+	float:left;
+	font-size: 20;
+	
+
 }
