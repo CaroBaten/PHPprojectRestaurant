@@ -44,7 +44,13 @@ if (isset($_POST['btnLogin']))
 
 	$loggedin =				$owner->login();
 
-	var_dump($loggedin);
+
+	
+
+	session_start();
+
+	$_SESSION['loggedin'] = $loggedin;
+	
 
 	 } catch (Exception $e) {
     
