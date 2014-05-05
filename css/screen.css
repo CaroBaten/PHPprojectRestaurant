@@ -1,0 +1,34 @@
+
+@font-face {
+    font-family: 'poiret-one';
+    src: url(../font/Poiret.ttf);
+}
+
+body
+{
+	font-family: "poiret-one", arial;
+
+}
+
+#logo
+{
+
+	display: block;
+	width: 350px;
+	margin-left:auto;
+	margin-right: auto;
+	margin-top: 40px;
+}
+
+#logo img
+{
+	width: 350px;
+
+}
+
+h1
+{
+	font-size: 40px;
+	text-align: center;
+	margin-top: 10px;
+}
