@@ -72,7 +72,9 @@ public function __set($p_sProperty, $p_vValue)
 
 	}
 
-public function register(){
+public function register()
+		
+		{
 
 		$db = new Db();
 		$sql = "insert into Owners (FirstName, LastName, Email, PhoneNumber, Password, City, Street, StreetNumber, PostalCode) values('"
@@ -88,8 +90,28 @@ public function register(){
 
 		$db->conn->query($sql);
 
-}
+		}
 
+public function login()
+		
+		{
+			$db = new Db();
+			$sql = "select * from Owners where 
+			Email = '" .  $db->conn->real_escape_string($this->m_sEmail) . "' and Password = '" . $db->conn->real_escape_string($this->m_sPassword) ."';";
+			
+			$result = $db->conn->query($sql);
+			$numberOfRows = $result->num_rows;
+			
+			if ($numberOfRows == 1){
+
+			return true ;
+
+			}else{
+
+			return false;
+			}
+
+		}	
 }
 
 

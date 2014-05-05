@@ -2,7 +2,7 @@
 include_once('classes/Owners.class.php');
 
 $owner = new Owner();
-if (!empty($_POST))
+if (isset($_POST['btnSignup']))
 {
 
 	try {
@@ -25,12 +25,34 @@ if (!empty($_POST))
 	 } catch (Exception $e) {
     
       $feedback = $e->getMessage();
-      echo $feedback;
-
+      
 
     }
 }
 
+if (isset($_POST['btnLogin']))
+{
+
+	try {
+
+	$pass					= $_POST['password'];
+	$salt 					= "KZE9323.|@è.==+";
+	$hashed   	 			= md5($pass . $salt);
+
+	$owner->Email 			= $_POST['username'];
+	$owner->Password 		= $hashed;
+
+	$loggedin =				$owner->login();
+
+	var_dump($loggedin);
+
+	 } catch (Exception $e) {
+    
+      $feedback = $e->getMessage();
+      
+
+    }
+}
 
 
  ?><!doctype html>
@@ -54,7 +76,7 @@ if (!empty($_POST))
 	<p><label for="password">Paswoord</label>
 	<input type="password" id="password" name="password"></p>
 
-	<input type="submit" value="inloggen">
+	<input type="submit" name = "btnLogin" value="inloggen">
 	</form>
 
 	</div>
