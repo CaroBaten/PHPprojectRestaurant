@@ -104,15 +104,15 @@ if (isset($_POST['btnLogin']))
 	
 
 		<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-		<input type="text" name="name" placeholder="Naam" />
-		<input type="text" name="firstname" placeholder="Voornaam" />
-		<input type="text" name="street" placeholder="Straat" />
-		<input type="text" name="number" placeholder="Huisnummer" />
-		<input type="text" name="postcode" placeholder="Postcode" />
-		<input type="text" name="city" placeholder="Plaats" />
-		<input type="text" name="phonenumber" placeholder="Gsm-nummer" />
-		<input type="email" name="email" placeholder="E-mail" />
-		<input type="password" name="password" placeholder="Paswoord" />
+		<input type="text" name="name" placeholder="Naam" required/>
+		<input type="text" name="firstname" placeholder="Voornaam" required />
+		<input type="text" name="street" placeholder="Straat" required/>
+		<input type="text" name="number" placeholder="Huisnummer" required/>
+		<input type="text" name="postcode" placeholder="Postcode" required/>
+		<input type="text" name="city" placeholder="Plaats" required/>
+		<input type="text" name="phonenumber" placeholder="Gsm-nummer" required/>
+		<input type="email" name="email" placeholder="E-mail" required/>
+		<input type="password" name="password" placeholder="Paswoord" required/>
 		
 		<input class="btn" type="submit" name="btnSignup" value="Aanmelden" />
 		</form>

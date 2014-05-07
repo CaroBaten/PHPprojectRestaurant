@@ -50,13 +50,13 @@
 			
              <div id="addrestaurant">
              <form>
-			<input type="text" name="name" placeholder="Naam" />
+			<input type="text" name="name" placeholder="Naam" required/>
 		
-		<input type="text" name="street" placeholder="Straat" />
-		<input type="text" name="number" placeholder="Huisnummer" />
-		<input type="text" name="postcode" placeholder="Postcode" />
-		<input type="text" name="city" placeholder="Plaats" />
-		<input type="text" name="phonenumber" placeholder="Gsm-nummer" />
+		<input type="text" name="street" placeholder="Straat" required/>
+		<input type="text" name="number" placeholder="Huisnummer" required/>
+		<input type="text" name="postcode" placeholder="Postcode" required/>
+		<input type="text" name="city" placeholder="Plaats" required/>
+		<input type="text" name="phonenumber" placeholder="Gsm-nummer" required/>
 
 			<input class="voegtoebtn" type="submit" value="restaurant toevoegen">
 
