@@ -41,16 +41,13 @@ if (isset($_POST['btnLogin']))
 
 	$owner->Email 			= $_POST['username'];
 	$owner->Password 		= $hashed;
-
+	$ownerID =				$owner->getOwnerId();
 	$loggedin =				$owner->login();
-
-
 	
-
 	session_start();
 
 	$_SESSION['loggedin'] = $loggedin;
-	
+	$_SESSION['ownerid'] = $ownerID;
 
 	 } catch (Exception $e) {
     
@@ -82,7 +79,7 @@ if (isset($_POST['btnLogin']))
 	<p><label for="password">Paswoord: </label>
 	<input type="password" id="password" name="password"></p>
 	
-	<input class="btn" type="submit" value="inloggen">
+	<input class="btn" type="submit" name="btnLogin" value="inloggen">
 	</form>
 
 	</div>
