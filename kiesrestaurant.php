@@ -19,7 +19,7 @@
 
 	<form action="<?php echo $_SERVER['PHP_SELF'];  ?>" method="post">
 
-	<label for="chooserestaurant"> Selecteer je restaurant</label> 
+	<label for="selectrestaurant"> Selecteer je restaurant</label> 
 
             <select class='select' id="selectrestaurant"> 
                    
@@ -31,8 +31,7 @@
 					  <input class='btn' type="radio" name="restaurant2" value="restaurant2">Restaurant2
 						-->
 			
-			<input class="restaurantinput" type="text" Placeholder="voeg een restaurant toe">
-			<input class="voegtoebtn" type="submit" value="+">
+			
 			<input class="restaurantbtn" type="submit" value=" Verder gaan">
 
 			
@@ -41,14 +40,36 @@
 				<!--Hier moeten de restaurants die bij de persoon horen, uit de database gehaald worden -->
 
              </select>
+				
+
+             </form>
+
+             <a href="#" class="toggle">Voeg een restaurant toe</a>
+         </div> <!-- end chooserestaurant-->
+
+			
+             <div id="addrestaurant">
+             <form>
+			<input type="text" name="name" placeholder="Naam" />
+		
+		<input type="text" name="street" placeholder="Straat" />
+		<input type="text" name="number" placeholder="Huisnummer" />
+		<input type="text" name="postcode" placeholder="Postcode" />
+		<input type="text" name="city" placeholder="Plaats" />
+		<input type="text" name="phonenumber" placeholder="Gsm-nummer" />
+
+			<input class="voegtoebtn" type="submit" value="restaurant toevoegen">
+
+		</form>
+		
+
+		</div> <!-- end add restaurant -->
+	
 
 
-	</form>
 
 
 
-
-	</div>
 	<div id="container">
 
 	
@@ -59,5 +80,8 @@
 
 
 	</div> <!-- end div container -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+ <script src="js/interaction.js"></script>
  </body>
+
  </html>
