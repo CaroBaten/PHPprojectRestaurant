@@ -71,6 +71,8 @@ h2
 	margin-top: 10px;
 	color:white;
 }
+
+/* LOGIN */
 #login
 {
 	
@@ -90,6 +92,16 @@ h2
 {
 	display:block;
 	margin-left: 600px;
+
+}
+.user
+{
+	display:block;
+	color:#00728e;
+	font-size:25px;
+	padding-top: 10px;
+	float:right;
+	padding-right: 250px;
 
 }
 #login label
@@ -115,8 +127,72 @@ h2
 }
 .btn
 {
-	color:white;
+		color:white;
 		background-color: #00728e;
 		font-family: "poiret one";
 		font-size: 15px;	
+		float:left;
 }
+/*  CHOOSE RESTAURANT   */
+#chooserestaurant
+{
+	margin-top: 250px;
+	display: block;
+	width:350px;;
+	margin-left: auto;
+	margin-right: auto;
+
+
+
+}
+
+
+#chooserestaurant label
+{
+	
+	font-size: 35px;
+	text-align: center;
+	margin-top: 10px;
+	color:white;
+}
+
+.select
+{
+		display:block;
+		width:100%;
+		color:white;
+		background-color: #00728e;
+		font-family: "poiret one";
+		font-size: 20px;	
+		float:left;
+}
+
+.restaurantinput
+{
+	display:block;
+	float:left;
+	width:90%;
+}
+
+.restaurantbtn
+{
+		
+		display:block;
+		color:white;
+		background-color: #00728e;
+		font-family: "poiret one";
+		font-size: 15px;	
+		float:left;
+}
+
+.voegtoebtn
+{
+		
+		display:block;
+		color: #00728e;
+		font-family: "poiret one";
+		font-size: 25px;	
+		float:left;
+}
+
+

@@ -81,7 +81,7 @@ if (isset($_POST['btnLogin']))
 
 	<p><label for="password">Paswoord: </label>
 	<input type="password" id="password" name="password"></p>
-	<input type="submit" name = "btnLogin" value="inloggen">
+	
 	<input class="btn" type="submit" value="inloggen">
 	</form>
 
