@@ -92,6 +92,27 @@ public function register()
 
 		}
 
+public function userExists()
+		{
+
+		$db = new Db();
+			$sql = "select * from Owners where 
+			Email = '" .  $db->conn->real_escape_string($this->m_sEmail) . "';";
+			
+			$result = $db->conn->query($sql);
+			$numberOfRows = $result->num_rows;
+			
+			if ($numberOfRows == 1){
+			
+			return true ;
+
+			}else{
+
+			return false;
+			}
+
+		}
+
 public function login()
 		
 		{

@@ -20,7 +20,13 @@ if (isset($_POST['btnSignup']))
 	$owner->Street 			= $_POST['street'];
 	$owner->PostalCode 		= $_POST['postcode'];
 
-	$owner->register();
+	$userExists =			$owner->userExists();
+	if($userExists == false){
+		$owner->register();
+	}else{
+		$feedback = "Email adres is al in gebruik";
+	}
+	
 
 	 } catch (Exception $e) {
     
