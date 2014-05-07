@@ -28,8 +28,6 @@ if (!empty($_POST['name']))
     }
 }
 
-$result_array = $restaurant->getRestaurants($_SESSION['ownerid']);
-print_r($result_array);
 ?>
 
 
@@ -57,15 +55,17 @@ print_r($result_array);
 	<label for="selectrestaurant"> Selecteer je restaurant</label> 
 
             <select class='select' id="selectrestaurant"> 
-                   
-                      <option value="Restaurant1"> Restaurant 1</option>
-					  <option value="Restaurant2"> Restaurant 2</option>
+                  
+                   <?php
 
-					  <!--
-					  <input class='btn' type="radio" name="restaurant1" value="male">Restaurant 1
-					  <input class='btn' type="radio" name="restaurant2" value="restaurant2">Restaurant2
-						-->
-			
+                   $result_array = $restaurant->getRestaurants($_SESSION['ownerid']);
+					print_r($result_array);
+                    foreach ($result_array as $resto){
+                    echo "<option value='". $resto['Name'] . "'>". $resto['Name'] ."</option>";
+                    }
+
+                   ?>
+                   		
 			
 			<input class="restaurantbtn" type="submit" value=" Verder gaan">
 
