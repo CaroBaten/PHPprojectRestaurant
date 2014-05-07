@@ -59,7 +59,25 @@ public function __set($p_sProperty, $p_vValue)
 		}
 
 	}
+public function insert()
+{
 
 
+$db = new Db();
+		
+		$sql = "insert into Restaurant (Name, City, Street, Streetnumber, Phonenumber, PostalCode, Owner_Id) values('"
+		 . $db->conn->real_escape_string($this->m_sName). "', '" 
+		 . $db->conn->real_escape_string($this->m_sCity) ."', '" 
+		 . $db->conn->real_escape_string($this->m_sStreet)	 . "', '"
+		 . $db->conn->real_escape_string($this->m_sStreetNumber)	 . "', '"
+		 . $db->conn->real_escape_string($this->m_sPhoneNumber)	 . "', "
+		 . $db->conn->real_escape_string($this->m_iPostalCode)	 . ", "
+		 . $db->conn->real_escape_string($this->m_iOwnerId)	 . ");";
+
+		$db->conn->query($sql);
+
+}
+
+}
 
 ?>

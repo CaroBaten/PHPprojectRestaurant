@@ -1,3 +1,38 @@
+<?php
+
+include_once('classes/Restaurant.class.php');
+
+$restaurant = new Restaurant();
+
+if (!empty($_POST['name']))
+{
+echo "hier";
+	try {
+
+	$restaurant->Name 				= $_POST['name'];
+	$restaurant->City 				= $_POST['city'];
+	$restaurant->Street 			= $_POST['street'];
+	$restaurant->StreetNumber		= $_POST['number'];
+	$restaurant->PhoneNumber 		= $_POST['phonenumber'];
+	$restaurant->PostalCode 		= $_POST['postcode'];
+	$restaurant->OwnerId 			= 1;
+	
+	$restaurant->insert();
+
+	 } catch (Exception $e) {
+    
+      $feedback = $e->getMessage();
+      
+
+    }
+}
+
+
+
+
+?>
+
+
 <html lang="en">
  <head>
  	<meta charset="UTF-8">
@@ -49,7 +84,7 @@
 
 			
              <div id="addrestaurant">
-             <form>
+             <form action="" method="post">
 			<input type="text" name="name" placeholder="Naam" required/>
 		
 		<input type="text" name="street" placeholder="Straat" required/>
