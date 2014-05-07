@@ -1,12 +1,13 @@
 <?php
 
 include_once('classes/Restaurant.class.php');
+session_start();
 
 $restaurant = new Restaurant();
 
 if (!empty($_POST['name']))
 {
-echo "hier";
+
 	try {
 
 	$restaurant->Name 				= $_POST['name'];
@@ -15,7 +16,7 @@ echo "hier";
 	$restaurant->StreetNumber		= $_POST['number'];
 	$restaurant->PhoneNumber 		= $_POST['phonenumber'];
 	$restaurant->PostalCode 		= $_POST['postcode'];
-	$restaurant->OwnerId 			= 1;
+	$restaurant->OwnerId 			= $_SESSION['ownerid'];
 	
 	$restaurant->insert();
 
