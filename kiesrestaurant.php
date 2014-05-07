@@ -28,9 +28,8 @@ if (!empty($_POST['name']))
     }
 }
 
-
-
-
+$result_array = $restaurant->getRestaurants($_SESSION['ownerid']);
+print_r($result_array);
 ?>
 
 

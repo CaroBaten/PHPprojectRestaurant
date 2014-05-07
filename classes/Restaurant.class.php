@@ -78,6 +78,28 @@ $db = new Db();
 
 }
 
+public function getRestaurants($pOwnerId)
+	{
+
+	$db = new Db();
+		
+	$sql = "select * from Restaurant where 
+	Owner_Id = '" . $pOwnerId . "';";
+	$result = $db->conn->query($sql);
+
+	$result_array=array();
+
+	// LOOP OVER ALL RECORDS AND PUT THEM IN AN ARRAY
+	while($row = $result->fetch_array())
+		{
+			$result_array[] = $row;
+		}
+
+	// RETURN RESULTS AS AN ARRAY
+			
+	return($result_array);
+	}
+
 }
 
 ?>
