@@ -166,7 +166,11 @@ h2
 		font-size: 20px;	
 		float:left;
 }
-
+.selectnav
+{
+	display:block;
+		width:200px;
+}
 .restaurantinput
 {
 	display:block;
@@ -213,4 +217,25 @@ h2
 	width:100%;
 	float:left;
 	
+}
+
+/* SUBNAV!!!! */
+#subnav 
+{
+	display:block;
+	width: 30%;
+	float: left;
+}
+
+
+#subnav li
+{
+	display: block;
+	width: 300px;
+	font-size:30px;
+	color:white;
+	background-color: #00728e;
+	margin-top: 20px;
+	padding-right: 15px;
+
 }

@@ -42,19 +42,22 @@ if (!empty($_POST['name']))
  	
 	<div id="login">
 	<a href="index.php"><img src="images/logodik.png" alt="logoklein">	</a>
+
+	
 	
 	<p class="user"> Welkom    </p> <!-- hier moet de naam van de user verschijnen -->
 
 	</div> <!-- end div login-->
 	<div class="clearfix">&nbsp;</div>
-	<div id="chooserestaurant">
-		
+	
 
-	<form action="<?php echo $_SERVER['PHP_SELF'];  ?>" method="post">
 
-	<label for="selectrestaurant"> Selecteer je restaurant</label> 
 
-            <select class='select' id="selectrestaurant"> 
+	<div id="container">
+	<div id="selectrestaurant">
+
+		<form action="<?php echo $_SERVER['PHP_SELF'];  ?>" method="post">
+ <select class='selectnav' id="selectrestaurant"> 
                   
                    <?php
 
@@ -65,53 +68,36 @@ if (!empty($_POST['name']))
                     }
 
                    ?>
+		</select>
+
+               </form>
+		
+
+
+	</div>
+	<div id="subnav">
+		
+	<ul>
+		<li><a href="tafelindeling.php">Tafelindeling </a></li>
+		<li><a href="menus.php">Menu's </a></li>
+		<li><a href="reservatie.php">Reservatie </a></li>
+	
+	</ul>
+	
+
+	
+	
+	</div>    <!-- end subnav-->
+
+
+           
                    		
-			
-			<input class="restaurantbtn" type="submit" value=" Verder gaan">
-
-			
-
-
-				<!--Hier moeten de restaurants die bij de persoon horen, uit de database gehaald worden -->
-
-             </select>
-				
-
-             </form>
-
-             <a href="#" class="toggle">Voeg een restaurant toe</a>
-         </div> <!-- end chooserestaurant-->
-
-			
-             <div id="addrestaurant">
-             <form action="" method="post">
-			<input type="text" name="name" placeholder="Naam" required/>
-		
-		<input type="text" name="street" placeholder="Straat" required/>
-		<input type="text" name="number" placeholder="Huisnummer" required/>
-		<input type="text" name="postcode" placeholder="Postcode" required/>
-		<input type="text" name="city" placeholder="Plaats" required/>
-		<input type="text" name="phonenumber" placeholder="Gsm-nummer" required/>
-
-			<input class="voegtoebtn" type="submit" value="restaurant toevoegen">
-
-		</form>
 		
 
-		</div> <!-- end add restaurant -->
-	
-		<div class="feedback">
+		
 
 
 
-		</div>
-
-
-
-
-	<div id="container">
-
-	
 	
 	
 
