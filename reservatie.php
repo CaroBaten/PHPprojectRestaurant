@@ -32,10 +32,7 @@ if (isset($_POST['sendreservation']))
     }
 }
 
-?>
-
-
-<html lang="en">
+?><html lang="en">
  <head>
  	<meta charset="UTF-8">
  	<title>Restorapp</title>
