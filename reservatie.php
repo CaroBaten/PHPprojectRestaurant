@@ -90,7 +90,38 @@ if (!empty($_POST['name']))
 	</div>    <!-- end subnav-->
 
 
-           
+    <div id="content">
+
+	<form action="<?php echo $_SERVER['PHP_SELF'];  ?>" method="post">
+
+	<label for="reservationname">Naam</label>
+	<input type="text" id="reservationname" name="reservationname">
+	
+	<label for="phonenumber"> Telefoonnummer </label>
+	<input type="text" id="phonenumber" name="phonenumber">
+
+	<label for="date">Datum </label>
+	<input type="text" id="date" name="date">
+
+	<label for="starthour"> Start uur </label>
+	<input type="text" id="starthour" name="starthour">
+
+	<label for="endhour"> Einduur </label>
+	<input type="text" id="endhour" name="endhour">
+
+	<label for="numberofpeople">Aantal personen</label>
+	<input type="text" id="numberofpeople" name="numberofpeople">
+	
+	<input class="btn" type="submit" name="sendreservation" value="Reserveren">
+	</form>
+
+
+
+
+
+
+
+   </div>
                    		
 		
 
