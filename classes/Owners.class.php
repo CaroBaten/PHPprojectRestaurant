@@ -146,6 +146,19 @@ public function getOwnerId()
 			return $row[0];
 
 	}
+
+public function getOwnerName()
+	{
+
+	$db = new Db();
+			$sql = "select Firstname from Owners where 
+			Email = '" .  $db->conn->real_escape_string($this->m_sEmail) . "' and Password = '" . $db->conn->real_escape_string($this->m_sPassword) ."';";
+			
+			$result = $db->conn->query($sql);
+			$row = mysqli_fetch_row($result);
+			
+			return $row[0];
+	}
 }
 
 

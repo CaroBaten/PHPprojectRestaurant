@@ -45,7 +45,7 @@ if (!empty($_POST['name']))
 
 	
 	
-	<p class="user"> Welkom    </p> <!-- hier moet de naam van de user verschijnen -->
+	<?php echo "<p class='user'> Welkom ". $_SESSION['ownerName'] . " </p>" ?>
 
 	</div> <!-- end div login-->
 	<div class="clearfix">&nbsp;</div>

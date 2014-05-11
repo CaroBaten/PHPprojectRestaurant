@@ -48,13 +48,14 @@ if (isset($_POST['btnLogin']))
 	$owner->Email 			= $_POST['username'];
 	$owner->Password 		= $hashed;
 	$ownerID =				$owner->getOwnerId();
+	$ownerName=				$owner->getOwnerName();
 	$loggedin =				$owner->login();
 	
 	session_start();
 
 	$_SESSION['loggedin'] = $loggedin;
 	$_SESSION['ownerid'] = $ownerID;
-	
+	$_SESSION['ownerName'] = $ownerName;
 
 	 } catch (Exception $e) {
     
