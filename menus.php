@@ -5,29 +5,6 @@ session_start();
 
 $restaurant = new Restaurant();
 
-if (!empty($_POST['name']))
-{
-
-	try {
-
-	$restaurant->Name 				= $_POST['name'];
-	$restaurant->City 				= $_POST['city'];
-	$restaurant->Street 			= $_POST['street'];
-	$restaurant->StreetNumber		= $_POST['number'];
-	$restaurant->PhoneNumber 		= $_POST['phonenumber'];
-	$restaurant->PostalCode 		= $_POST['postcode'];
-	$restaurant->OwnerId 			= $_SESSION['ownerid'];
-	
-	$restaurant->insert();
-
-	 } catch (Exception $e) {
-    
-      $feedback = $e->getMessage();
-      
-
-    }
-}
-
 ?>
 
 

@@ -84,7 +84,7 @@ public function makeReservation()
 public function getDateNow()
 {
 
-	$dtz = new DateTimeZone("Europe/Brussels"); //Your timezone
+$dtz = new DateTimeZone("Europe/Brussels"); 
 $now = new DateTime(date("Y-m-d"), $dtz);
 
 return $now->format("Y-m-d");
