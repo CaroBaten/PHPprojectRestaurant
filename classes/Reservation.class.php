@@ -10,7 +10,8 @@ private $m_iNumberOfPeople;
 private $m_sDate;
 private $m_iStartHour;
 private $m_iEndHour;
-private $m_iRestaurantId
+private $m_iRestaurantId;
+private $m_sPhoneNumber;
 
 
 public function __set($p_sProperty, $p_vValue)
@@ -48,6 +49,11 @@ public function __set($p_sProperty, $p_vValue)
 			$this->m_iRestaurantId = $p_vValue;
 			break;
 			
+			case 'PhoneNumber':
+
+			$this->m_sPhoneNumber = $p_vValue;
+			break;
+			
 		}
 
 	}
@@ -57,15 +63,17 @@ public function makeReservation()
 		{
 
 		$db = new Db();
-		$sql = "insert into Reservation (Name, NumberOfPeople, Date, StartHour, EndHour, Restaurant_id) values('"
+		$sql = "insert into Reservation (Name, NumberOfPeople, Date, StartHour, EndHour, PhoneNumber, Restaurant_id) values('"
 		 . $db->conn->real_escape_string($this->m_sName). "', " 
-		 . $db->conn->real_escape_string($this->m_iNumberOfPeople) .", '" 
+		 . $db->conn->real_escape_string($this->m_iNumberOfPeople) . ", '" 
 		 . $db->conn->real_escape_string($this->m_sDate)	 . "', "
-		 . $db->conn->real_escape_string($this->m_iStartHour) . 
+		 . $db->conn->real_escape_string($this->m_iStartHour) . ", "
+		 . $db->conn->real_escape_string($this->m_iEndHour) . ", '"
+		 . $db->conn->real_escape_string($this->m_sPhoneNumber) . "', "
 		 . $db->conn->real_escape_string($this->m_iRestaurantId) . ");";
 
 		$db->conn->query($sql);
-
+		echo $sql;
 		}
 
 }

@@ -1,24 +1,28 @@
 <?php
 
 include_once('classes/Restaurant.class.php');
+include_once('classes/Reservation.class.php');
 session_start();
 
 $restaurant = new Restaurant();
+$reservation = new Reservation();
 
-if (!empty($_POST['name']))
+
+if (isset($_POST['sendreservation']))
 {
+	echo "hier";
 
 	try {
 
-	$restaurant->Name 				= $_POST['name'];
-	$restaurant->City 				= $_POST['city'];
-	$restaurant->Street 			= $_POST['street'];
-	$restaurant->StreetNumber		= $_POST['number'];
-	$restaurant->PhoneNumber 		= $_POST['phonenumber'];
-	$restaurant->PostalCode 		= $_POST['postcode'];
-	$restaurant->OwnerId 			= $_SESSION['ownerid'];
+	$reservation->Name 					= $_POST['reservationname'];
+	$reservation->PhoneNumber 			= $_POST['phonenumber'];
+	$reservation->Date 					= $_POST['date'];
+	$reservation->StartHour				= $_POST['starthour'];
+	$reservation->EndHour 				= $_POST['endhour'];
+	$reservation->NumberOfPeople 		= $_POST['numberofpeople'];
+	$reservation->RestaurantId 			= $_SESSION['restaurantId'];
 	
-	$restaurant->insert();
+	$reservation->makeReservation();
 
 	 } catch (Exception $e) {
     

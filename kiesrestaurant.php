@@ -4,6 +4,8 @@ include_once('classes/Restaurant.class.php');
 session_start();
 
 $restaurant = new Restaurant();
+if (isset($_POST['btnAdd'])){
+
 
 if (!empty($_POST['name']))
 {
@@ -27,6 +29,14 @@ if (!empty($_POST['name']))
 
     }
 }
+
+}
+if (isset($_POST['btnProceed'])){
+$_SESSION['restaurantId'] = $_POST['selectrestaurant'];
+
+}
+
+
 
 ?>
 
@@ -54,20 +64,21 @@ if (!empty($_POST['name']))
 
 	<label for="selectrestaurant"> Selecteer je restaurant</label> 
 
-            <select class='select' id="selectrestaurant"> 
+            <select class='select' id="selectrestaurant" name = "selectrestaurant"> 
                   
                    <?php
 
                    $result_array = $restaurant->getRestaurants($_SESSION['ownerid']);
 					print_r($result_array);
                     foreach ($result_array as $resto){
-                    echo "<option value='". $resto['Name'] . "'>". $resto['Name'] ."</option>";
+                    echo "<option value='". $resto['RestaurantId'] . "'>". $resto['Name'] ."</option>";
+
                     }
 
                    ?>
                    		
 			
-			<input class="restaurantbtn" type="submit" value=" Verder gaan">
+			<input class="restaurantbtn" type="submit" value=" Verder gaan" name = "btnProceed">
 
 			
 
@@ -93,7 +104,7 @@ if (!empty($_POST['name']))
 		<input type="text" name="city" placeholder="Plaats" required/>
 		<input type="text" name="phonenumber" placeholder="Gsm-nummer" required/>
 
-			<input class="voegtoebtn" type="submit" value="restaurant toevoegen">
+			<input class="voegtoebtn" type="submit" value="restaurant toevoegen" name = "btnAdd">
 
 		</form>
 		
