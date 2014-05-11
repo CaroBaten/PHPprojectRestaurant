@@ -97,12 +97,6 @@ if (isset($_POST['sendreservation']))
 
 	<form action="<?php echo $_SERVER['PHP_SELF'];  ?>" method="post">
 
-	<label for="reservationname">Naam</label>
-	<input type="text" id="reservationname" name="reservationname">
-	
-	<label for="phonenumber"> Telefoonnummer </label>
-	<input type="text" id="phonenumber" name="phonenumber">
-
 	<label for="date">Datum </label>
 	<input type="date" id="date" name="date">
 
@@ -111,6 +105,13 @@ if (isset($_POST['sendreservation']))
 
 	<label for="endhour"> Einduur </label>
 	<input type="time" id="endhour" name="endhour">
+
+	<label for="reservationname">Naam</label>
+	<input type="text" id="reservationname" name="reservationname">
+	
+	<label for="phonenumber"> Telefoonnummer </label>
+	<input type="text" id="phonenumber" name="phonenumber">
+
 
 	<label for="numberofpeople">Aantal personen</label>
 	<input type="text" id="numberofpeople" name="numberofpeople">
@@ -121,7 +122,11 @@ if (isset($_POST['sendreservation']))
 
 
 
-
+	<section id="reservations">
+			<!-- VOORBEELD STRUCTUUR FILMS
+				<img src="posters/1.jpg" alt="Movie title">
+			-->			
+	</section>
 
 
 
@@ -130,19 +135,61 @@ if (isset($_POST['sendreservation']))
 		
 
 		
-
-
-
-	
-	
-
-
-
-
 	</div> <!-- end div container -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
  <script src="js/interaction.js"></script>
+
+ <script>
+$(document).ready(function(){ 
+	console.log("ready");
+$('#date').change(function() { 
+	
+
+ ajaxCall();
+    return(false);
+});
+	 });
+
+function ajaxCall()
+
+{
+
+ var val = $( "#date" ).val();
+
+ var dataString = "date="+val;
+console.log(dataString);
+
+$.ajax({ 
+ type: "POST", 
+ url: "ajax/getreservations.php", 
+ data: dataString, // values to submit 
+ success: function(msg) { 
+ // what to do when call succeeds 
+ if(msg.success == 1){
+console.log("success");
+var update = "";
+ 			
+ 			for(var i = 0; i < msg.reservation.length ; i++){
+				update += "<p> " + msg.reservation[i][1] + "</p>";
+
+			}
+		
+		$( "#reservations" ).html(update);
+  }else{
+
+
+  }
+ }, 
+ error: function() { 
+ // what to do when call fails 
  
+ } 
+ });
+
+}
+
+
+ </script>
  </body>
 
  </html>

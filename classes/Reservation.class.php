@@ -1,6 +1,6 @@
 <?php
 
-include_once('classes/Connection.php');
+include_once('Connection.php');
 
 class Reservation
 {
@@ -82,14 +82,34 @@ public function makeReservation()
 		}
 
 public function getDateNow()
-{
+	{
 
 $dtz = new DateTimeZone("Europe/Brussels"); 
 $now = new DateTime(date("Y-m-d"), $dtz);
 
 return $now->format("Y-m-d");
 
-}
+	}
+
+public function getReservations($p_date)
+	{
+		
+		$db = new Db();
+		$query = "select * from Reservation where Date = '" . $p_date . "';";
+				
+		$result = $db->conn->query($query);
+		$result_array=array();
+
+		// LOOP OVER ALL RECORDS AND PUT THEM IN AN ARRAY
+		while($row = $result->fetch_array())
+		{
+			$result_array[] = $row;
+		}
+
+		// RETURN RESULTS AS AN ARRAY
+
+		return($result_array);
+	}
 
 }
 
