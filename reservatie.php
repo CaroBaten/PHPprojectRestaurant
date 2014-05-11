@@ -10,9 +10,7 @@ $reservation = new Reservation();
 
 if (isset($_POST['sendreservation']))
 {
-	echo "hier";
-	echo $_POST['date'];
-	echo $_POST['starthour'];
+
 
 	try {
 
@@ -29,7 +27,7 @@ if (isset($_POST['sendreservation']))
 	 } catch (Exception $e) {
     
       $feedback = $e->getMessage();
-      
+      echo $feedback;
 
     }
 }

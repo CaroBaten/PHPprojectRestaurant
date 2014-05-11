@@ -25,7 +25,7 @@ if (!empty($_POST['name']))
 	 } catch (Exception $e) {
     
       $feedback = $e->getMessage();
-      
+      echo $feedback;
 
     }
 }

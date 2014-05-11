@@ -41,6 +41,9 @@ public function __set($p_sProperty, $p_vValue)
 
 			case 'EndHour':
 
+			if( $p_vValue<= $this->m_iStartHour ){
+				throw new exception("Het einduur moet na het startuur liggen!");
+			}
 			$this->m_iEndHour = $p_vValue;
 			break;
 
