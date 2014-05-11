@@ -30,7 +30,9 @@ public function __set($p_sProperty, $p_vValue)
 			break;
 
 			case 'Date':
-
+			if ($p_vValue < $this->getDateNow()){
+				throw new exception("Datum mag niet in het verleden liggen");
+			}
 			$this->m_sDate = $p_vValue;
 			break;
 
@@ -79,7 +81,19 @@ public function makeReservation()
 		echo $sql;
 		}
 
+public function getDateNow()
+{
+
+	$dtz = new DateTimeZone("Europe/Brussels"); //Your timezone
+$now = new DateTime(date("Y-m-d"), $dtz);
+
+return $now->format("Y-m-d");
+
 }
+
+}
+
+
 
 
 ?>

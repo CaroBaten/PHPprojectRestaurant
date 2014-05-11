@@ -2,6 +2,7 @@
 
 include_once('classes/Connection.php');
 
+
 class Restaurant
 {
 
@@ -101,5 +102,6 @@ public function getRestaurants($pOwnerId)
 	}
 
 }
+
 
 ?>
