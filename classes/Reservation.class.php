@@ -66,9 +66,9 @@ public function makeReservation()
 		$sql = "insert into Reservation (Name, NumberOfPeople, Date, StartHour, EndHour, PhoneNumber, Restaurant_id) values('"
 		 . $db->conn->real_escape_string($this->m_sName). "', " 
 		 . $db->conn->real_escape_string($this->m_iNumberOfPeople) . ", '" 
-		 . $db->conn->real_escape_string($this->m_sDate)	 . "', "
-		 . $db->conn->real_escape_string($this->m_iStartHour) . ", "
-		 . $db->conn->real_escape_string($this->m_iEndHour) . ", '"
+		 . $db->conn->real_escape_string($this->m_sDate)	 . "', '"
+		 . $db->conn->real_escape_string($this->m_iStartHour) . "', '"
+		 . $db->conn->real_escape_string($this->m_iEndHour) . "', '"
 		 . $db->conn->real_escape_string($this->m_sPhoneNumber) . "', "
 		 . $db->conn->real_escape_string($this->m_iRestaurantId) . ");";
 

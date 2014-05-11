@@ -11,6 +11,8 @@ $reservation = new Reservation();
 if (isset($_POST['sendreservation']))
 {
 	echo "hier";
+	echo $_POST['date'];
+	echo $_POST['starthour'];
 
 	try {
 
@@ -105,16 +107,17 @@ if (isset($_POST['sendreservation']))
 	<input type="text" id="phonenumber" name="phonenumber">
 
 	<label for="date">Datum </label>
-	<input type="text" id="date" name="date">
+	<input type="date" id="date" name="date">
 
 	<label for="starthour"> Start uur </label>
-	<input type="text" id="starthour" name="starthour">
+	<input type="time" id="starthour" name="starthour">
 
 	<label for="endhour"> Einduur </label>
-	<input type="text" id="endhour" name="endhour">
+	<input type="time" id="endhour" name="endhour">
 
 	<label for="numberofpeople">Aantal personen</label>
 	<input type="text" id="numberofpeople" name="numberofpeople">
+	
 	
 	<input class="btn" type="submit" name="sendreservation" value="Reserveren">
 	</form>
@@ -142,6 +145,7 @@ if (isset($_POST['sendreservation']))
 	</div> <!-- end div container -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
  <script src="js/interaction.js"></script>
+ 
  </body>
 
  </html>
