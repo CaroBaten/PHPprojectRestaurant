@@ -110,7 +110,7 @@ $menu->deleteItem($_POST['itemid']);
  			echo "	<tr class='highlight'>";
  			echo "<td>" . $d['Item'] . "</td>";
  			echo "<td>" . $d['Price'] . "</td>";
- 			echo "<td> <form action='' method='post'><input type='text' name='itemid' value='".$d['MenuId']. "' hidden><input type='submit' id='delete' name ='delete' value='delete'></form></td>";
+ 			echo "<td> <form action='' method='post'><input type='text' name='itemid' value='".$d['Item']. "' hidden><input type='submit' id='delete' name ='delete' value='delete'></form></td>";
  			echo "</tr>";
 
  			}
@@ -171,7 +171,7 @@ $.ajax({
 				update+= "<tr class='highlight'>";
 				update +=  "<td> " + item + "</td>" ;
 				update +=  "<td> " + price + "</td>" ;
-				update += "<td> <img class='del' src='images/delete.png' alt=''></td>";
+				update += "<td> <form action='' method='post'><input type='text' name='itemid' value='" +item+ "' hidden><input type='submit' id='delete' name ='delete' value='delete'></form></td>";;
 				update += "</tr>";	
 					
 		$( "#listfoodmenu" ).append(update);
