@@ -78,7 +78,8 @@ header('Location: '.$_SERVER['REQUEST_URI']);
 
 <div class="content">
 		<div id="tablewrapper" class="content">
-
+<div id="feedback">
+</div>
 		 <div id="addTable">
      		<form action="" method="post">
     <input type="text" id ="name" name="name" placeholder="Naam" required/>
@@ -156,9 +157,11 @@ $.ajax({
  success: function(msg) { 
  // what to do when call succeeds 
  
- console.log("success");
+
  var update = "";
-			
+	if(msg.status ==true)	{
+
+
  			
 				update+= "<tr class='highlight'>";
 				update +=  "<td> " + item + "</td>" ;
@@ -167,7 +170,12 @@ $.ajax({
 				update += "</tr>";	
 					
 		$( "#listdrinkmenu" ).append(update);
- 			
+		$("#feedback").hide();
+ 		}else{
+ 			var feedback = "<p>" + msg.message + "</p>";
+ 			$( "#feedback" ).html(feedback);
+
+ 		}	
  },
  error: function() { 
  // what to do when call fails 

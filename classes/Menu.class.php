@@ -21,8 +21,14 @@ public function __set($p_sProperty, $p_vValue)
 			break;
 
 			case 'Price':
+			
+				if(is_numeric($p_vValue)){
+					$this->m_dPrice = $p_vValue;
+				}else{
+					throw new exception("Prijs moet een getal zijn!");
+				}
 
-			$this->m_dPrice = $p_vValue;
+			 				
 			break;
 
 			case 'Type':
