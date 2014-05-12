@@ -7,8 +7,7 @@ $table = new Table();
 if (isset($_POST['btnAdd'])){
 
 
-<<<<<<< HEAD
-=======
+
 if (!empty($_POST['name']))
 {
 
@@ -16,7 +15,7 @@ if (!empty($_POST['name']))
 
 
 	$table->Name 				= $_POST['name'];
-	$table->numberOfSeats 				= $_POST['numberOfSeats'];
+	$table->numberOfSeats 		= $_POST['numberOfSeats'];
 	
 	$table->insert();
 
@@ -24,9 +23,6 @@ if (!empty($_POST['name']))
     
       $feedback = $e->getMessage();
       
->>>>>>> 5f3054c882f2d5ec34ae855d2ebdf38cd328165c
-
-
 }
 if (isset($_POST['btnProceed'])){
 $_SESSION['restaurantId'] = $_POST['selectrestaurant'];
@@ -35,7 +31,9 @@ $_SESSION['restaurantId'] = $_POST['selectrestaurant'];
 
 
 
-?><html lang="en">
+?>
+
+<html lang="en">
  <head>
  	<meta charset="UTF-8">
  	<title>Restorapp Tafel</title>
