@@ -24,7 +24,7 @@ $restaurant = new Restaurant();
 	<div id="login">
 	<a href="dashboard.php"><img src="images/logodik.png" alt="logoklein">	</a>
 
-	
+	<a class="user" id="logout" href="logout.php">Log out</a>
 	
 	<?php echo "<p class='user'> Welkom ". $_SESSION['ownerName'] . " </p>" ?>
 
