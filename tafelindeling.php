@@ -79,10 +79,25 @@ $restaurant = new Restaurant();
 		</form>
 		
 
-		</div> <!-- end add restaurant -->
+		</div> <!-- end add table -->
+		
+
+		<div id="tableoverview">
+				<h2>Overzicht van tafels</h2>
 
 
-   </div>
+			<ul id="listtables">
+				
+
+			</ul>
+
+
+
+		</div>
+
+
+
+   </div> <!-- end tables-->
                    		
 		
 
