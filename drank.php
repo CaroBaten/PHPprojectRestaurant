@@ -70,57 +70,57 @@ $restaurant = new Restaurant();
 	</div>    <!-- end subnav-->
 
 
-    <div id="drinkmenu">       
-    <h2>Drankmenu</h2>               	
-	<table id="listdrinkmenu">
-				
-		<tr class="highlight">
-		  <th>Drank</th>
-		  <th>Prijs</th> 
-		  <th>Verwijderen</th>
-		</tr>
+<div class="content">
+		<div id="tablewrapper" class="content">
 
-	
+		 <div id="addTable">
+     		<form action="" method="post">
+    <input type="text" id ="name" name="name" placeholder="Naam" required/>
+    <input type="text" id ="price" name="price" placeholder="Prijs" required/>
+      <?php echo "<input type='text' id='restaurantId' name='restaurantId' hidden value='". $_SESSION['restaurantId'] . "'/>";  ?>
+    <input class="voegtoebtn" id="btnAdd" type="submit" value="Drank toevoegen" name = "btnAdd">
 
-			<?php
- 			foreach ($allDrinks as $d){
- 			echo "	<tr class='highlight'>";
- 			echo "<td>" . $d['Item'] . "</td>";
- 			echo "<td>" . $d['Price'] . "</td>";
- 			echo "<td> <img src='images/delete.png' alt=''></td>";
- 			echo "</tr>";
- 			}
-			?>
+    </form>	
+		</div> <!-- end tablewrapper-->
+<div class="clearfix">&nbsp;</div>
+		</div> <!-- end table -->
+  
+   </div>
+   
+		<div id="tables" class="content">
+		<h2>Drankmenu</h2>
 		
-	
-	
+   <section id="rows">
 
+<table id="listdrinkmenu">
+ <tr>
+      <th>Drank</th>
+      <th>Prijs</th> 
+      <th>Verwijderen</th>
+    </tr>
 
-	</table>	
-
-		 <div id="addDrink">
-             <form action="" method="post">
-		<input type="text" id ="name" name="name" placeholder="Naam" required/>
-		<input type="text" id ="price" name="price" placeholder="Prijs" required/>
-			<?php echo "<input type='text' id='restaurantId' name='restaurantId' hidden value='". $_SESSION['restaurantId'] . "'/>";  ?>
-		<input class="voegtoebtn" id="btnAdd" type="submit" value="Drank toevoegen" name = "btnAdd">
-
-		</form>
+<?php
+      foreach ($allDrinks as $d){
+      echo "  <tr class='highlight'>";
+      echo "<td>" . $d['Item'] . "</td>";
+      echo "<td>" . $d['Price'] . "</td>";
+      echo "<td> <img src='images/delete.png' alt=''></td>";
+      echo "</tr>";
+      }
+      ?>
+</table>
+   </section>    		
+		</div> <!-- end tables-->
 
 
 	</div>
+			
 
-	</div> <!-- end div listdrinkmenu -->
-
-
-
-	
-	
-
-
-
-
+			
+		
 	</div> <!-- end div container -->
+
+
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
  <script src="js/interaction.js"></script>
  <script>

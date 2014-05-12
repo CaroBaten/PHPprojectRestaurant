@@ -1,4 +1,4 @@
-<?php
+sx<?php
 
 include_once('classes/Restaurant.class.php');
 include_once('classes/Tables.class.php');
