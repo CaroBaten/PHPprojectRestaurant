@@ -15,7 +15,7 @@ $restaurant = new Restaurant();
 <html lang="en">
  <head>
  	<meta charset="UTF-8">
- 	<title>Restorapp - menu </title>
+ 	<title>Restorapp</title>
  	<link rel="stylesheet" href="css/reset.css">
  	<link rel="stylesheet" href="css/screen.css">
  </head>
@@ -48,7 +48,7 @@ $restaurant = new Restaurant();
 	<ul>
 		<li><a href="tafelindeling.php">Tafelindeling </a></li>
 		<li><a href="menus.php">Menu's </a>
-				<ul id="menusubmenu">
+				<ul "menusubmenu">
 						<li><a href="drank.php">Drankmenu</a></li>
 						<li><a href="eten.php">Gerechten</a></li>
 					</ul>
@@ -58,33 +58,7 @@ $restaurant = new Restaurant();
 	
 	</ul>
 	
-<div id="drankmenu">
 
-
-	<table id="listdrinkmenu">
-				
-		<tr>
-		  <th>Drank</th>
-		  <th>Prijs</th> 
-		  <th>Verwijderen</th>
-		</tr>
-
-		<tr>
-			<td>Sprite</td>
-			<td>1,8</td>
-			<td> <img src="images/delete.png" alt=""></td>
-
-		</tr>
-	
-	
-
-
-	</table>
-	
-
-
-
-</div>
 	
 	
 	</div>    <!-- end subnav-->

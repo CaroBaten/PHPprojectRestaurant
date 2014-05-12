@@ -15,7 +15,7 @@ $restaurant = new Restaurant();
 <html lang="en">
  <head>
  	<meta charset="UTF-8">
- 	<title>Restorapp - menu </title>
+ 	<title>Restorapp</title>
  	<link rel="stylesheet" href="css/reset.css">
  	<link rel="stylesheet" href="css/screen.css">
  </head>
@@ -48,7 +48,7 @@ $restaurant = new Restaurant();
 	<ul>
 		<li><a href="tafelindeling.php">Tafelindeling </a></li>
 		<li><a href="menus.php">Menu's </a>
-				<ul id="menusubmenu">
+				<ul "menusubmenu">
 						<li><a href="drank.php">Drankmenu</a></li>
 						<li><a href="eten.php">Gerechten</a></li>
 					</ul>
@@ -58,18 +58,23 @@ $restaurant = new Restaurant();
 	
 	</ul>
 	
-<div id="drankmenu">
+
+	
+	
+	</div>    <!-- end subnav-->
 
 
+    <div id="drinkmenu">       
+    <h2>Drankmenu</h2>               	
 	<table id="listdrinkmenu">
 				
-		<tr>
+		<tr class="highlight">
 		  <th>Drank</th>
 		  <th>Prijs</th> 
 		  <th>Verwijderen</th>
 		</tr>
 
-		<tr>
+		<tr class="highlight">
 			<td>Sprite</td>
 			<td>1,8</td>
 			<td> <img src="images/delete.png" alt=""></td>
@@ -79,22 +84,21 @@ $restaurant = new Restaurant();
 	
 
 
-	</table>
-	
+	</table>	
+
+		 <div id="addDrink">
+             <form action="" method="post">
+		<input type="text" id ="name" name="name" placeholder="Naam" required/>
+		<input type="text" id ="price" name="price" placeholder="Prijs" required/>
+
+		<input class="voegtoebtn" id="btnAdd" type="submit" value="Drank toevoegen" name = "btnAdd">
+
+		</form>
 
 
+	</div>
 
-</div>
-	
-	
-	</div>    <!-- end subnav-->
-
-
-           
-                   		
-		
-
-		
+	</div> <!-- end div listdrinkmenu -->
 
 
 
