@@ -231,13 +231,60 @@ h2
 #subnav li
 {
 	display: block;
-	width: 300px;
+	width: 200px;
 	font-size:30px;
 	color:white;
 	background-color: #00728e;
-	margin-top: 20px;
+	padding-top:15px;
 	padding-right: 15px;
+	text-align:center;
 
 }
 
+#subnav a:link, a:visited, a:hover, a:active
+{
+color:white;
+text-decoration: none;
 
+}
+/*RESERVATIE.php */
+
+#addreservation
+{
+
+
+	display: block;
+	width:350px;;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+#addreservation input
+{
+	
+
+	display:block;
+	width:100%;
+	float:left;
+	
+}
+
+#addreservation label
+{
+	
+
+	display:block;
+	width:100%;
+	float:left;
+}
+
+
+#reservations
+{
+
+	display: block;
+	width:350px;;
+	margin-left: auto;
+	margin-right: auto;
+}
