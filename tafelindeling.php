@@ -75,7 +75,8 @@ $table->AddTable();
 	
 	</div>    <!-- end subnav-->
 
-
+		
+    	<div class="content">
 		<div id="tablewrapper" class="content">
 
 		 <div id="addTable">
@@ -86,14 +87,14 @@ $table->AddTable();
 			<input class="voegtoebtn" id="btnAdd" type="submit" value="Tafel Toevoegen" name = "btnAdd">
 
 		</form>
-		
-
+		</div> <!-- end tablewrapper-->
+<div class="clearfix">&nbsp;</div>
 		</div> <!-- end table -->
   
    </div>
    
 		<div id="tables" class="content">
-		<h2>Overzicht van reservaties</h2>
+		<h2>Overzicht van tafels</h2>
 		
    <section id="rows">
 
@@ -117,9 +118,12 @@ $table->AddTable();
 </table>
    </section>    		
 		</div> <!-- end tables-->
+
+
+	</div>
 			
 
-			</div> <!-- end tablewrapper-->
+			
 		
 	</div> <!-- end div container -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

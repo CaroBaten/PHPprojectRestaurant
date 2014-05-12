@@ -113,7 +113,7 @@ if (isset($_POST['sendreservation']))
 	
 	<input class="btn" type="submit" name="sendreservation" value="Reserveren">
 	</form>
-
+	</div> <!-- end reservationwrapper-->
 <div class="clearfix">&nbsp;</div>
 	
 
@@ -137,7 +137,7 @@ if (isset($_POST['sendreservation']))
 		
 	</div> <!-- end div container -->
 
-	</div> <!-- end reservationwrapper-->
+
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
  <script src="js/interaction.js"></script>
 

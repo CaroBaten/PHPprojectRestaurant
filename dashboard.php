@@ -24,7 +24,7 @@ $restaurant = new Restaurant();
  <body>
  	
 	<div id="login">
-	<a href="index.php"><img src="images/logodik.png" alt="logoklein">	</a>
+	<a href="dashboard.php"><img src="images/logodik.png" alt="logoklein">	</a>
 
 	<a class="user" id="logout" href="logout.php">Log out</a>
 	
@@ -40,10 +40,7 @@ $restaurant = new Restaurant();
 
 	<div id="container">
 	<div id="selectrestaurant">
-
-	
-
-                  
+   
                    <?php
 
                    
@@ -51,11 +48,6 @@ $restaurant = new Restaurant();
                     
 
                    ?>
-	
-
-              
-		
-
 
 	</div>
 	<div id="subnav">
@@ -73,33 +65,13 @@ $restaurant = new Restaurant();
 		<li><a href="kiesrestaurant.php">Restaurants</a></li>
 	
 	</ul>
-	
 
-	
-	
 	</div>    <!-- end subnav-->
-
-
-           
-                   		
-		<div>
-			
-
-
-		<p>Welkom Bij restorapp </p>
+	<div>
+			<p>Welkom Bij restorapp </p>
 
 			<p>Klik links op het menu om verder te gaan </p>
 		</div>
-
-		
-
-
-
-	
-	
-
-
-
 
 	</div> <!-- end div container -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>

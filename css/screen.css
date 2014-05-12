@@ -66,18 +66,18 @@ h1
 h2
 
 {
-	font-size: 25px;
+	display:block;
+	width:100%;
+	font-size: 35px;
 	text-align: center;
-	margin-top: 10px;
+	margin-top: 15px;
+	margin-bottom: 10px;
 	color:white;
+	float:left;
 }
 
  h3
 {
-	
-
-
-
 	display: block;
 	width: 215px;
 	font-size:30px;
@@ -129,7 +129,7 @@ h2
 	font-size:25px;
 	padding-top: 10px;
 	float:right;
-	padding-right: 250px;
+	padding-right: 50px;
 
 }
  a:link.user, 
@@ -177,18 +177,18 @@ h2
 	width:350px;;
 	margin-left: auto;
 	margin-right: auto;
-
-
-
 }
+
+
 
 
 #chooserestaurant label
 {
 	
+	display: block;
 	font-size: 35px;
 	text-align: center;
-	margin-bottom: 20px;
+	padding-bottom: 20px;
 	color:white;
 }
 
@@ -228,6 +228,7 @@ h2
 		font-family: "poiret one";
 		font-size: 15px;	
 		float:left;
+		margin-top:10px;
 }
 
 .voegtoebtn
@@ -238,6 +239,9 @@ h2
 		font-family: "poiret one";
 		font-size: 25px;	
 		float:left;
+		margin-top: 10px;
+
+
 }
 #addrestaurant
 {
@@ -290,18 +294,13 @@ h2
 }
 
 #menusubmenu li a {
-
-	
-
 	font-size:15px;
 }
 
-
-	#subnav ul li:hover > #menusubmenu {
+#subnav ul li:hover > #menusubmenu 
+{
 		display: block;
-
-		
-	}
+}
 
 
 
@@ -319,9 +318,22 @@ h2
 }
 /*RESERVATIE.php */
 
+.content
+{
+	display: block;
+	width:80%;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
 
-
-#reservationwrapper
+.content form
+{
+	width: 100%;
+	display:block;
+	padding-bottom:  20px;
+}
+/*#reservationwrapper
 {
 	display: block;
 	width:80%;
@@ -329,7 +341,7 @@ h2
 	margin-right: auto;
 	float:left;
 }
-
+*/
 
 #addreservation
 {
@@ -369,7 +381,7 @@ h2
 	width:600px;
 	margin-left: auto;
 	margin-right: auto;
-	float:left;
+	
 }
 
 #listreservations
@@ -399,6 +411,8 @@ h2
 	margin-top: 15px;
 }
 /*TAFELINDELING */
+
+
 #addtable
 {
 
@@ -439,7 +453,6 @@ h2
 	width:600px;
 	margin-left: auto;
 	margin-right: auto;
-	float:left;
 }
 
 #listTables
