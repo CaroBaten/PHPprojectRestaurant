@@ -22,8 +22,12 @@ public function __set($p_sProperty, $p_vValue)
 			break;
 
 			case 'NumberOfSeats':
-
-			$this->m_iNumberOfSeats = $p_vValue;
+			if(is_numeric($p_vValue)){
+				$this->m_iNumberOfSeats = $p_vValue;
+			}else{
+				throw new exception("aantal plaatsen moet een getal zijn!");
+			}
+			
 			break;
 
 			case 'RestaurantId':
