@@ -92,7 +92,7 @@ if (isset($_POST['sendreservation']))
 
     <div class="content">
 
-	<form action="<?php echo $_SERVER['PHP_SELF'];  ?>" method="post">
+	<form id= "addreservation" action="<?php echo $_SERVER['PHP_SELF'];  ?>" method="post">
 
 	<label for="date">Datum </label>
 	<input type="date" id="date" name="date">
@@ -119,11 +119,17 @@ if (isset($_POST['sendreservation']))
 
 
 
-	<section id="reservations">
-			<!-- VOORBEELD STRUCTUUR FILMS
-				<img src="posters/1.jpg" alt="Movie title">
-			-->			
-	</section>
+<div id="reservations">
+	
+	<h2>Overzicht van reservaties</h2>
+
+	<ul>
+	
+
+	</ul>
+	
+
+	</div>   <!-- end reservation -->
 
 
 
@@ -167,11 +173,12 @@ console.log("success");
 var update = "";
  			
  			for(var i = 0; i < msg.reservation.length ; i++){
-				update += "<p> " + msg.reservation[i][1] + "</p>";
+				update += "<li> " + msg.reservation[i][1] + "</li>";
 
 			}
 		
 		$( "#reservations" ).html(update);
+	
   }else{
 
 
