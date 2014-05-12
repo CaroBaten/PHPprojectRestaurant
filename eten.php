@@ -15,6 +15,7 @@ $allFood = $menu->getMenu($_SESSION['restaurantId']);
 if (isset($_POST['delete']))
 {
 $menu->deleteItem($_POST['itemid']);
+header('Location: '.$_SERVER['REQUEST_URI']);
 }
 
 

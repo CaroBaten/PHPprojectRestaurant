@@ -1,6 +1,6 @@
 <?php
 
-include_once('classes/Restaurant.class.php');
+
 include_once('classes/Menu.class.php');
 session_start();
 $menu = new Menu();
@@ -13,7 +13,13 @@ if($_SESSION['loggedin']==false)
 	header("Location: index.php");
 	exit();
 }
-$restaurant = new Restaurant();
+
+
+if (isset($_POST['delete']))
+{
+$menu->deleteItem($_POST['itemid']);
+header('Location: '.$_SERVER['REQUEST_URI']);
+}
 
 ?>
 
@@ -104,7 +110,7 @@ $restaurant = new Restaurant();
       echo "  <tr class='highlight'>";
       echo "<td>" . $d['Item'] . "</td>";
       echo "<td>" . $d['Price'] . "</td>";
-      echo "<td> <img src='images/delete.png' alt=''></td>";
+      echo "<td> <form action='' method='post'><input type='text' name='itemid' value='".$d['Item']. "' hidden><input type='submit' id='delete' name ='delete' value='delete'></form></td>";
       echo "</tr>";
       }
       ?>
@@ -157,7 +163,7 @@ $.ajax({
 				update+= "<tr class='highlight'>";
 				update +=  "<td> " + item + "</td>" ;
 				update +=  "<td> " + price + "</td>" ;
-				update += "<td> <img src='images/delete.png' alt=''></td>";
+				update += "<td> <form action='' method='post'><input type='text' name='itemid' value='" + item + "' hidden><input type='submit' id='delete' name ='delete' value='delete'></form></td>";
 				update += "</tr>";	
 					
 		$( "#listdrinkmenu" ).append(update);
