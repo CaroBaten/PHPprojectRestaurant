@@ -1,12 +1,24 @@
 <?php
 
 include_once('classes/Restaurant.class.php');
-
+include_once('classes/Tables.class.php');
 session_start();
 
 $restaurant = new Restaurant();
+$table = new Table();
 
+$allTables = $table->getTables($_SESSION['restaurantId']);
+/*
+if (isset($_POST['btnAdd']))
+{
+$table->Name 			= $_POST['name'];
+$table->NumberOfSeats 	= $_POST['numberOfSeats'];
+$table->RestaurantId	= $_SESSION['restaurantId'];
 
+$table->AddTable();
+}
+
+*/
 
 
 ?><html lang="en">
@@ -71,33 +83,29 @@ $restaurant = new Restaurant();
 
 		 <div id="addTable">
              <form action="" method="post">
-		<input type="text" name="name" placeholder="Naam" required/>
-		<input type="text" name="numberOfSeats" placeholder="Aantal plaatsen" required/>
-
-			<input class="voegtoebtn" type="submit" value="Tafel Toevoegen" name = "btnAdd">
+		<input type="text" id ="name" name="name" placeholder="Naam" required/>
+		<input type="text" id ="numberOfSeats" name="numberOfSeats" placeholder="Aantal plaatsen" required/>
+		<?php echo "<input type='text' id='restaurantId' name='restaurantId' value='". $_SESSION['restaurantId'] . "' hidden/>"  ?>
+			<input class="voegtoebtn" id="btnAdd" type="submit" value="Tafel Toevoegen" name = "btnAdd">
 
 		</form>
 		
+			<ul id="tables">
+ <?php
+/*
+   foreach ($allTables as $t){
+  //alle tafels moeten hier komen
+                  
+    }
+*/
+ ?>
 
-		</div> <!-- end add table -->
+    </ul>  
 		
 
-		<div id="tableoverview">
-				<h2>Overzicht van tafels</h2>
-
-
-			<ul id="listtables">
-				
-
-			</ul>
-
-
-
-		</div>
-
-
-
-   </div> <!-- end tables-->
+		</div> <!-- end add restaurant -->
+  
+   </div>
                    		
 		
 
@@ -105,6 +113,49 @@ $restaurant = new Restaurant();
 	</div> <!-- end div container -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
  <script src="js/interaction.js"></script>
+<script>
+
+$(document).ready(function(){ 
+	console.log("ready");
+ $( "#btnAdd" ).click(function() {
+ 	console.log("clicked");
+ var name = $( "#name" ).val();
+ var numberOfSeats = $( "#numberOfSeats" ).val();
+ var restaurantId = $( "#restaurantId" ).val();
+ var dataString = "name="+name + "&numberOfSeats=" + numberOfSeats;
+
+ console.log(dataString);
+
+
+//SUBMIT DATA USING AJAX CALL 
+ $.ajax({ 
+ type: "POST", 
+ url: "ajax/addtable.php", // ajax/facebook-status-update.php 
+ data: { 
+        'name': name, 
+        'numberOfSeats': numberOfSeats,
+        'restaurantId': restaurantId
+    }, // values to submit 
+ success: function(msg) { 
+ // what to do when call succeeds 
+ 
+ console.log("success");
+ //tafel moet in li komen
+ 			
+ },
+ error: function() { 
+ // what to do when call fails 
+ console.log("fail");
+ } 
+ });
+ 
+ 
+ return(false); //AVOID PAGE RELOAD WHEN CLICKING ON SUBMIT BUTTON 
+ }); 
+}); 
+
+</script>
+
 
  
  </body>
