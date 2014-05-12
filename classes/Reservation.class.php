@@ -81,7 +81,7 @@ public function makeReservation()
 		 . $db->conn->real_escape_string($this->m_iRestaurantId) . ");";
 
 		$db->conn->query($sql);
-		echo $sql;
+	
 		}
 
 public function getDateNow()

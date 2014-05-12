@@ -27,7 +27,7 @@ if (isset($_POST['sendreservation']))
 	$reservation->RestaurantId 			= $_SESSION['restaurantId'];
 	
 	$reservation->makeReservation();
-
+	
 	 } catch (Exception $e) {
     
       $feedback = $e->getMessage();

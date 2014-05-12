@@ -24,6 +24,7 @@ if (isset($_POST['btnSignup']))
 	$userExists =			$owner->userExists();
 	if($userExists == false){
 		$owner->register();
+		$feedback="Succesvol geregistreerd";
 	}else{
 		$feedback = "Email adres is al in gebruik";
 
@@ -62,16 +63,13 @@ if (isset($_POST['btnLogin']))
 	{
 		header("Location: kiesrestaurant.php");
 	}else{
-		$feedback ="Het paswoord komt niet overeen met dit emailadres";
+		$feedback = "paswoord of emailadres is fout";
 	}
 
 	 } catch (Exception $e) {
     
       $feedback = $e->getMessage();
-
-      
-
-    }
+     }
 }
 
 
@@ -101,7 +99,12 @@ if (isset($_POST['btnLogin']))
 
 	</div>
 	<div class="clearfix">&nbsp;</div>
+	<?php 
+	if (isset($feedback)){
+		echo "<p> " . $feedback . "</p>";
+	}
 
+	  ?>
 	<div id="container">
 
 	<div id="logo">
@@ -110,14 +113,7 @@ if (isset($_POST['btnLogin']))
 
 	</div>
 	<div class="clearfix">&nbsp;</div>
-	<div id="feedback">
-	<?php 
-	if (isset($feedback)){
-		echo "<p> " . $feedback . "</p>";
-	}
-
-	  ?>
-	</div>
+	
 	<div id="signup">
 	
 	<h2>Nog geen lid ? Meld je nu aan! </h2>
@@ -139,7 +135,14 @@ if (isset($_POST['btnLogin']))
 		</form>
 	</div> <!--end signup-->
 
-	
+	<div id="feedback">
+	<?php 
+	if (isset($feedback)){
+		echo "<p> " . $feedback . "</p>";
+	}
+
+	  ?>
+	</div>
 
 
 	</div> <!-- end div container -->

@@ -1,6 +1,6 @@
 <?php
 
-include_once('classes/Connection.php');
+include_once('Connection.php');
 
 class Owner
 {
@@ -77,7 +77,7 @@ public function register()
 		{
 
 		$db = new Db();
-		$sql = "insert into Owners (FirstName, LastName, Email, PhoneNumber, Password, City, Street, StreetNumber, PostalCode) values('"
+		$sql = "insert into phpdb.Owners (FirstName, LastName, Email, PhoneNumber, Password, City, Street, StreetNumber, PostalCode) values('"
 		 . $db->conn->real_escape_string($this->m_sFirstName). "', '" 
 		 . $db->conn->real_escape_string($this->m_sLastName) ."', '" 
 		 . $db->conn->real_escape_string($this->m_sEmail)	 . "', '"
@@ -96,7 +96,7 @@ public function userExists()
 		{
 
 		$db = new Db();
-			$sql = "select * from Owners where 
+			$sql = "select * from phpdb.Owners where 
 			Email = '" .  $db->conn->real_escape_string($this->m_sEmail) . "';";
 			
 			$result = $db->conn->query($sql);
@@ -117,7 +117,7 @@ public function login()
 		
 		{
 			$db = new Db();
-			$sql = "select * from Owners where 
+			$sql = "select * from phpdb.Owners where 
 			Email = '" .  $db->conn->real_escape_string($this->m_sEmail) . "' and Password = '" . $db->conn->real_escape_string($this->m_sPassword) ."';";
 			
 			$result = $db->conn->query($sql);
