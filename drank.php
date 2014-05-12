@@ -151,7 +151,16 @@ $.ajax({
  // what to do when call succeeds 
  
  console.log("success");
- 
+ var update = "";
+			
+ 			
+				update+= "<tr class='highlight'>";
+				update +=  "<td> " + item + "</td>" ;
+				update +=  "<td> " + price + "</td>" ;
+				update += "<td> <img src='images/delete.png' alt=''></td>";
+				update += "</tr>";	
+					
+		$( "#listdrinkmenu" ).append(update);
  			
  },
  error: function() { 

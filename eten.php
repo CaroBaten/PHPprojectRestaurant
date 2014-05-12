@@ -1,12 +1,21 @@
 <?php
 
 include_once('classes/Restaurant.class.php');
+include_once('classes/Menu.class.php');
 session_start();
+
 if($_SESSION['loggedin']==false)
 {
 	header("Location: index.php");
 	exit();
 }
+$menu = new Menu();
+$menu->Type = "eten";
+$allFood = $menu->getMenu($_SESSION['restaurantId']);
+
+
+
+
 $restaurant = new Restaurant();
 
 ?>
@@ -74,12 +83,15 @@ $restaurant = new Restaurant();
 		  <th>Verwijderen</th>
 		</tr>
 
-		<tr class="highlight">
-			<td>Sprite</td>
-			<td>1,8</td>
-			<td> <img src="images/delete.png" alt=""></td>
-
-		</tr>
+	<?php
+ 			foreach ($allFood as $d){
+ 			echo "	<tr class='highlight'>";
+ 			echo "<td>" . $d['Item'] . "</td>";
+ 			echo "<td>" . $d['Price'] . "</td>";
+ 			echo "<td> <img src='images/delete.png' alt=''></td>";
+ 			echo "</tr>";
+ 			}
+			?>
 	
 	
 
@@ -90,8 +102,8 @@ $restaurant = new Restaurant();
              <form action="" method="post">
 		<input type="text" id ="name" name="name" placeholder="Naam" required/>
 		<input type="text" id ="price" name="price" placeholder="Prijs" required/>
-
-		<input class="voegtoebtn" id="btnAdd" type="submit" value="Drank toevoegen" name = "btnAdd">
+		<?php echo "<input type='text' id='restaurantId' name='restaurantId' hidden value='". $_SESSION['restaurantId'] . "'/>";  ?>
+		<input class="voegtoebtn" id="btnAdd" type="submit" value="gerecht toevoegen" name = "btnAdd">
 
 		</form>
 
@@ -111,6 +123,59 @@ $restaurant = new Restaurant();
 	</div> <!-- end div container -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
  <script src="js/interaction.js"></script>
+ <script>
+
+$(document).ready(function(){ 
+	console.log("ready");
+ $( "#btnAdd" ).click(function() {
+ 	console.log("clicked");
+ var item = $( "#name" ).val();
+ var price = $( "#price" ).val();
+ var restaurantId = $( "#restaurantId" ).val();
+ 
+
+ console.log(item + " " + price);
+
+
+//SUBMIT DATA USING AJAX CALL 
+$.ajax({ 
+ type: "POST", 
+ url: "ajax/additem.php", // ajax/facebook-status-update.php 
+ data: { 
+        'item': item, 
+        'price': price,
+        'type': 'eten',
+        'restaurantId': restaurantId
+    }, // values to submit 
+ success: function(msg) { 
+ // what to do when call succeeds 
+ 
+ console.log("success");
+ var update = "";
+			
+ 			
+				update+= "<tr class='highlight'>";
+				update +=  "<td> " + item + "</td>" ;
+				update +=  "<td> " + price + "</td>" ;
+				update += "<td> <img src='images/delete.png' alt=''></td>";
+				update += "</tr>";	
+					
+		$( "#listfoodmenu" ).append(update);
+ 			
+ },
+ error: function() { 
+ // what to do when call fails 
+ 
+ } 
+ });
+//AVOID PAGE RELOAD WHEN CLICKING ON SUBMIT BUTTON 
+return(false);
+ }); 
+
+
+}); 
+
+</script>
  </body>
 
  </html>

@@ -71,7 +71,7 @@ public function getMenu($p_RestaurantId)
 		}
 
 	// RETURN RESULTS AS AN ARRAY
-	var_dump($result_array);
+
 	return($result_array);
 	}
 
