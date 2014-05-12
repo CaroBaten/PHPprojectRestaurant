@@ -55,13 +55,13 @@ public function AddTable()
 
 }
 
-public function getTables($pTableId)
+public function getTables($p_RestaurantId)
 	{
 
 	$db = new Db();
 		
 	$sql = "select * from phpdb.Table where 
-	TableId = '" . $pTableId . "';";
+	RestaurantId = '" . $p_RestaurantId . "';";
 	$result = $db->conn->query($sql);
 
 	$result_array=array();
