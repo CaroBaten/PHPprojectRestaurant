@@ -115,24 +115,11 @@ if (isset($_POST['sendreservation']))
 	
 	<h2>Overzicht van reservaties</h2>
 
-	
-	<table id="listreservations">
-				
-		<tr>
-		  <th>Naam</th>
-		  <th>Aantal</th> 
-		  <th>Startuur</th>
-		  <th>Einduur</th>
-		  <th>Telefoonnummer</th>
-		</tr>
-
-	
-	
+	<section id="rows">
 
 
-	</table>
+	</section>
 	
-
 	</div>   <!-- end reservation -->
 
 
@@ -177,7 +164,14 @@ $.ajax({
  if(msg.success == 1){
 console.log("success");
 var update = "";
- 			
+			update += "<table id='listreservations'>";
+ 			update+="<tr>";
+		  	update += "<th>Naam</th>";
+		  	update += "<th>Aantal</th>"; 
+		    update+= "<th>Startuur</th>";
+		  	update += "<th>Einduur</th>";
+		  	update += "<th>Telefoonnummer</th>";
+		update += "</tr>";
  			for(var i = 0; i < msg.reservation.length ; i++){
 				update+= "<tr>"
 				update +=  "<td> " + msg.reservation[i][1] + "</td>" ;
@@ -187,8 +181,9 @@ var update = "";
 				update +=  "<td> " + msg.reservation[i][6] + "</td>" ;	
 				update += "</tr>"	
 				}
+			update +="</table>";
 		$("#reservations").show();
-		$( "#listreservations" ).append(update);
+		$( "#rows" ).html(update);
 	
   }else{
 

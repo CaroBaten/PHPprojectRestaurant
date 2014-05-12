@@ -12,6 +12,7 @@ $restaurant = new Restaurant();
 $table = new Table();
 
 $allTables = $table->getTables($_SESSION['restaurantId']);
+
 /*
 if (isset($_POST['btnAdd']))
 {
@@ -82,14 +83,9 @@ $table->AddTable();
 		</form>
 		
 			<ul id="tables">
- <?php
-/*
-   foreach ($allTables as $t){
-  //alle tafels moeten hier komen
-                  
-    }
-*/
- ?>
+
+
+ 
 
     </ul>  
 		
@@ -97,7 +93,26 @@ $table->AddTable();
 		</div> <!-- end add restaurant -->
   
    </div>
-                   		
+   <section id="rows">
+   	<table id='listTables'>
+   	<tr>
+   	<th> Naam </th>
+   	<th> Aantal personen </th>
+   	</tr>
+<?php
+
+   foreach ($allTables as $t){
+     echo "<tr>";
+     echo "<td> " . $t['Name'] . " </td>";
+     echo "<td> " . $t['NumberOfSeats'] . " </td>";
+
+     echo "</tr>";
+
+    }
+
+ ?>
+</table>
+   </section>    		
 		
 
 		
@@ -131,7 +146,16 @@ $(document).ready(function(){
  // what to do when call succeeds 
  
  console.log("success");
- //tafel moet in li komen
+ var update = "";
+			
+ 			
+				update+= "<tr>"
+				update +=  "<td> " + name + "</td>" ;
+				update +=  "<td> " + numberOfSeats + "</td>" ;
+				
+				update += "</tr>"	
+					
+		$( "#listTables" ).append(update);
  			
  },
  error: function() { 
@@ -143,6 +167,7 @@ $(document).ready(function(){
  
  return(false); //AVOID PAGE RELOAD WHEN CLICKING ON SUBMIT BUTTON 
  }); 
+
 }); 
 
 </script>
