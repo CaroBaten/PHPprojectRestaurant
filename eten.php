@@ -72,9 +72,31 @@ $menu->deleteItem($_POST['itemid']);
 	
 	</div>    <!-- end subnav-->
 
+	<div class="content">
+		<div id="tablewrapper" class="content">
+			
+		 <div id="addTable">
+             <form action="" method="post">
+		<input type="text" id ="name" name="name" placeholder="Naam" required/>
+		<input type="text" id ="price" name="price" placeholder="Prijs" required/>
+		<?php echo "<input type='text' id='restaurantId' name='restaurantId' hidden value='". $_SESSION['restaurantId'] . "'/>";  ?>
+		<input class="voegtoebtn" id="btnAdd" type="submit" value="gerecht toevoegen" name = "btnAdd">
 
-    <div id="foodmenu">       
+		</form>
+
+
+	</div> <!-- end tablewrapper -->
+
+		<div class="clearfix">&nbsp;</div>
+
+
+		</div> <!-- end table -->
+
+		 </div>
+
+    <div id="tables" class="content">       
     <h2>Eetmenu</h2>               	
+	  <section id="rows">
 	<table id="listfoodmenu">
 				
 		<tr class="highlight">
@@ -94,24 +116,15 @@ $menu->deleteItem($_POST['itemid']);
  			}
 			?>
 	
-	
+		
+
 
 
 	</table>	
 
-		 <div id="addDrink">
-             <form action="" method="post">
-		<input type="text" id ="name" name="name" placeholder="Naam" required/>
-		<input type="text" id ="price" name="price" placeholder="Prijs" required/>
-		<?php echo "<input type='text' id='restaurantId' name='restaurantId' hidden value='". $_SESSION['restaurantId'] . "'/>";  ?>
-		<input class="voegtoebtn" id="btnAdd" type="submit" value="gerecht toevoegen" name = "btnAdd">
+		</div> <!-- end tables-->
 
-		</form>
-
-
-	</div>
-
-	</div> <!-- end div listdrinkmenu -->
+	</div> <!-- end div listfoodmenu -->
 
 
 

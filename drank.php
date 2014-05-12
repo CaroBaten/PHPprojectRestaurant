@@ -93,7 +93,7 @@ $restaurant = new Restaurant();
    <section id="rows">
 
 <table id="listdrinkmenu">
- <tr>
+ <tr class="highlight">
       <th>Drank</th>
       <th>Prijs</th> 
       <th>Verwijderen</th>
