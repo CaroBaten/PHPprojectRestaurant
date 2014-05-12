@@ -26,10 +26,12 @@ $restaurant = new Restaurant();
 	<div id="login">
 	<a href="index.php"><img src="images/logodik.png" alt="logoklein">	</a>
 
-	
+	<a class="user" id="logout" href="logout.php">Log out</a>
 	
 	<?php echo "<p class='user'> Welkom ". $_SESSION['ownerName'] . " </p>" ?>
 
+
+      
 	</div> <!-- end div login-->
 	<div class="clearfix">&nbsp;</div>
 	
@@ -84,7 +86,9 @@ $restaurant = new Restaurant();
 			
 
 
-			Kies links wat .....
+		<p>Welkom Bij restorapp </p>
+
+			<p>Klik links op het menu om verder te gaan </p>
 		</div>
 
 		

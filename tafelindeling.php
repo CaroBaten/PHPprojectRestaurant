@@ -38,7 +38,7 @@ $table->AddTable();
 	<div id="login">
 	<a href="dashboard.php"><img src="images/logodik.png" alt="logoklein">	</a>
 
-	
+	<a class="user" id="logout" href="logout.php">Log out</a>
 	
 	<?php echo "<p class='user'> Welkom ". $_SESSION['ownerName'] . " </p>" ?>
 	</div> <!-- end div login-->
@@ -76,7 +76,7 @@ $table->AddTable();
 	</div>    <!-- end subnav-->
 
 
-		<div id="tables" class="content">
+		<div id="tablewrapper" class="content">
 
 		 <div id="addTable">
              <form action="" method="post">
@@ -87,18 +87,16 @@ $table->AddTable();
 
 		</form>
 		
-			<ul id="tables">
 
-
- 
-
-    </ul>  
-		
-
-		</div> <!-- end add restaurant -->
+		</div> <!-- end table -->
   
    </div>
+   
+		<div id="tables" class="content">
+		<h2>Overzicht van reservaties</h2>
+		
    <section id="rows">
+
    	<table id='listTables'>
    	<tr>
    	<th> Naam </th>
@@ -107,7 +105,7 @@ $table->AddTable();
 <?php
 
    foreach ($allTables as $t){
-     echo "<tr>";
+     echo "<tr class='highlight'>";
      echo "<td> " . $t['Name'] . " </td>";
      echo "<td> " . $t['NumberOfSeats'] . " </td>";
 
@@ -118,8 +116,10 @@ $table->AddTable();
  ?>
 </table>
    </section>    		
-		
+		</div> <!-- end tables-->
+			
 
+			</div> <!-- end tablewrapper-->
 		
 	</div> <!-- end div container -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -154,7 +154,7 @@ $(document).ready(function(){
  var update = "";
 			
  			
-				update+= "<tr>"
+				update+= "<tr class='highlight'>"
 				update +=  "<td> " + name + "</td>" ;
 				update +=  "<td> " + numberOfSeats + "</td>" ;
 				
