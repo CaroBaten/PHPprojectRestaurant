@@ -1,4 +1,5 @@
 <?php 
+
 include_once('classes/Owners.class.php');
 
 $owner = new Owner();
@@ -56,10 +57,15 @@ if (isset($_POST['btnLogin']))
 	$_SESSION['loggedin'] = $loggedin;
 	$_SESSION['ownerid'] = $ownerID;
 	$_SESSION['ownerName'] = $ownerName;
+	if ($loggedin== true)
+	{
+		header("Location: kiesrestaurant.php");
+	}
 
 	 } catch (Exception $e) {
     
       $feedback = $e->getMessage();
+
       
 
     }
@@ -77,7 +83,7 @@ if (isset($_POST['btnLogin']))
  <body>
  	
 	<div id="login">
-	<a href="index.php"><img src="images/logodik.png" alt="logoklein">	</a>
+	<a href="dashboard.php"><img src="images/logodik.png" alt="logoklein">	</a>
 	
 	<form action="<?php echo $_SERVER['PHP_SELF'];  ?>" method="post">
 

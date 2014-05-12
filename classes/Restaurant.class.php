@@ -101,6 +101,18 @@ public function getRestaurants($pOwnerId)
 	return($result_array);
 	}
 
+public function getRestaurantName($p_restaurantId)
+	{
+
+	$db = new Db();
+			$sql = "select Name from Restaurant where 
+			RestaurantId = '" .  $db->conn->real_escape_string($p_restaurantId) ."';";
+			
+			$result = $db->conn->query($sql);
+			$row = mysqli_fetch_row($result);
+			
+			return $row[0];
+	}
 }
 
 
