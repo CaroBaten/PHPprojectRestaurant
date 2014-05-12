@@ -90,7 +90,7 @@ $restaurant = new Restaurant();
              <form action="" method="post">
 		<input type="text" id ="name" name="name" placeholder="Naam" required/>
 		<input type="text" id ="price" name="price" placeholder="Prijs" required/>
-
+			<?php echo "<input type='text' id='restaurantId' name='restaurantId' hidden value='". $_SESSION['restaurantId'] . "'/>";  ?>
 		<input class="voegtoebtn" id="btnAdd" type="submit" value="Drank toevoegen" name = "btnAdd">
 
 		</form>
@@ -111,6 +111,50 @@ $restaurant = new Restaurant();
 	</div> <!-- end div container -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
  <script src="js/interaction.js"></script>
+ <script>
+
+$(document).ready(function(){ 
+	console.log("ready");
+ $( "#btnAdd" ).click(function() {
+ 	console.log("clicked");
+ var item = $( "#name" ).val();
+ var price = $( "#price" ).val();
+ var restaurantId = $( "#restaurantId" ).val();
+ 
+
+ console.log(item + " " + price);
+
+
+//SUBMIT DATA USING AJAX CALL 
+$.ajax({ 
+ type: "POST", 
+ url: "ajax/additem.php", // ajax/facebook-status-update.php 
+ data: { 
+        'item': item, 
+        'price': price,
+        'type': 'drank',
+        'restaurantId': restaurantId
+    }, // values to submit 
+ success: function(msg) { 
+ // what to do when call succeeds 
+ 
+ console.log("success");
+ 
+ 			
+ },
+ error: function() { 
+ // what to do when call fails 
+ 
+ } 
+ });
+//AVOID PAGE RELOAD WHEN CLICKING ON SUBMIT BUTTON 
+return(false);
+ }); 
+
+
+}); 
+
+</script>
  </body>
 
  </html>
