@@ -1,7 +1,6 @@
 <?php
 
 include_once('classes/Restaurant.class.php');
-
 session_start();
 if($_SESSION['loggedin']==false)
 {
@@ -9,7 +8,6 @@ if($_SESSION['loggedin']==false)
 	exit();
 }
 $restaurant = new Restaurant();
-
 
 ?>
 
@@ -24,7 +22,7 @@ $restaurant = new Restaurant();
  <body>
  	
 	<div id="login">
-	<a href="index.php"><img src="images/logodik.png" alt="logoklein">	</a>
+	<a href="dashboard.php"><img src="images/logodik.png" alt="logoklein">	</a>
 
 	
 	
@@ -37,36 +35,24 @@ $restaurant = new Restaurant();
 
 
 	<div id="container">
-	<div id="selectrestaurant">
-
-	
-
-                  
-                   <?php
-
-                   
+	<div id="restaurantselect">
+              <?php                 
                     echo "<h3>". $_SESSION['restaurantName']  . "</h3>";
-                    
-
-                   ?>
-	
-
-              
-		
+                                      ?>
+	</div>
 
 
 	</div>
 	<div id="subnav">
 		
-	<ul>
+		<ul>
 		<li><a href="tafelindeling.php">Tafelindeling </a></li>
 		<li><a href="menus.php">Menu's </a>
-					<ul id="menusubmenu">
+				<ul id="menusubmenu">
 						<li><a href="drank.php">Drankmenu</a></li>
 						<li><a href="eten.php">Gerechten</a></li>
 					</ul>
 				</li>
-		</li>
 		<li><a href="reservatie.php">Reservatie </a></li>
 		<li><a href="kiesrestaurant.php">Restaurants</a></li>
 	
@@ -78,16 +64,41 @@ $restaurant = new Restaurant();
 	</div>    <!-- end subnav-->
 
 
-           
-                   		
-		<div>
-			
+    <div id="foodmenu">       
+    <h2>Eetmenu</h2>               	
+	<table id="listfoodmenu">
+				
+		<tr class="highlight">
+		  <th>Gerecht</th>
+		  <th>Prijs</th> 
+		  <th>Verwijderen</th>
+		</tr>
+
+		<tr class="highlight">
+			<td>Sprite</td>
+			<td>1,8</td>
+			<td> <img src="images/delete.png" alt=""></td>
+
+		</tr>
+	
+	
 
 
-			Kies links wat .....
-		</div>
+	</table>	
 
-		
+		 <div id="addDrink">
+             <form action="" method="post">
+		<input type="text" id ="name" name="name" placeholder="Naam" required/>
+		<input type="text" id ="price" name="price" placeholder="Prijs" required/>
+
+		<input class="voegtoebtn" id="btnAdd" type="submit" value="Drank toevoegen" name = "btnAdd">
+
+		</form>
+
+
+	</div>
+
+	</div> <!-- end div listdrinkmenu -->
 
 
 

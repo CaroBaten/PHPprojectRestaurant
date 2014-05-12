@@ -60,7 +60,7 @@ if (isset($_POST['sendreservation']))
 	<div id="container">
 	<div id="selectrestaurant">
 				<?php                 
-                    echo "<h1>". $_SESSION['restaurantName']  . "</h1>";
+                    echo "<h3>". $_SESSION['restaurantName']  . "</h3>";
                                       ?>
 
 
@@ -69,7 +69,13 @@ if (isset($_POST['sendreservation']))
 		
 	<ul>
 		<li><a href="tafelindeling.php">Tafelindeling </a></li>
-		<li><a href="menus.php">Menu's </a></li>
+		<li><a href="menus.php">Menu's </a>
+				<ul id="menusubmenu">
+						<li><a href="drank.php">Drankmenu</a></li>
+						<li><a href="eten.php">Gerechten</a></li>
+					</ul>
+				</li>
+	
 		<li><a href="reservatie.php">Reservatie </a></li>
 		<li><a href="kiesrestaurant.php">Restaurants</a></li>
 	
@@ -164,8 +170,8 @@ $.ajax({
  if(msg.success == 1){
 console.log("success");
 var update = "";
-			update += "<table id='listreservations'>";
- 			update+="<tr>";
+			update += "<table id='listreservations' >";
+ 			update+="<tr class='highlight'>";
 		  	update += "<th>Naam</th>";
 		  	update += "<th>Aantal</th>"; 
 		    update+= "<th>Startuur</th>";
@@ -173,7 +179,7 @@ var update = "";
 		  	update += "<th>Telefoonnummer</th>";
 		update += "</tr>";
  			for(var i = 0; i < msg.reservation.length ; i++){
-				update+= "<tr>"
+				update+= "<tr class='highlight'>"
 				update +=  "<td> " + msg.reservation[i][1] + "</td>" ;
 				update +=  "<td> " + msg.reservation[i][2] + "</td>" ;
 				update +=  "<td> " + msg.reservation[i][4] + "</td>" ;

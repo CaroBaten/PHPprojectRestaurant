@@ -51,7 +51,7 @@ $table->AddTable();
 	<div id="restaurantselect">
 
 			<?php                 
-                    echo "<h1>". $_SESSION['restaurantName']  . "</h1>";
+                    echo "<h3>". $_SESSION['restaurantName']  . "</h3>";
                                       ?>
 
 	</div>
@@ -59,7 +59,12 @@ $table->AddTable();
 		
 	<ul>
 		<li><a href="tafelindeling.php">Tafelindeling </a></li>
-		<li><a href="menus.php">Menu's </a></li>
+		<li><a href="menus.php">Menu's </a>
+					<ul id="menusubmenu">
+						<li><a href="drank.php">Drankmenu</a></li>
+						<li><a href="eten.php">Gerechten</a></li>
+					</ul>
+				</li>
 		<li><a href="reservatie.php">Reservatie </a></li>
 		<li><a href="kiesrestaurant.php">Restaurants</a></li>
 	

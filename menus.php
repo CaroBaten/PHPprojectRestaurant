@@ -61,25 +61,6 @@ $restaurant = new Restaurant();
 <div id="drankmenu">
 
 
-	<table id="listdrinkmenu">
-				
-		<tr>
-		  <th>Drank</th>
-		  <th>Prijs</th> 
-		  <th>Verwijderen</th>
-		</tr>
-
-		<tr>
-			<td>Sprite</td>
-			<td>1,8</td>
-			<td> <img src="images/delete.png" alt=""></td>
-
-		</tr>
-	
-	
-
-
-	</table>
 	
 
 

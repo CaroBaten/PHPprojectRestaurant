@@ -45,10 +45,10 @@ $restaurant = new Restaurant();
 	</div>
 	<div id="subnav">
 		
-	<ul>
+		<ul>
 		<li><a href="tafelindeling.php">Tafelindeling </a></li>
 		<li><a href="menus.php">Menu's </a>
-				<ul "menusubmenu">
+				<ul id="menusubmenu">
 						<li><a href="drank.php">Drankmenu</a></li>
 						<li><a href="eten.php">Gerechten</a></li>
 					</ul>

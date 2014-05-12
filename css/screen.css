@@ -483,3 +483,50 @@ tr.highlight td
 	margin-top: 15px;
 	padding-top: 20px;
 }
+
+
+/* FOODMENU */
+
+#foodmenu
+{
+
+
+	width:600px;
+	margin-left: auto;
+	margin-right: auto;
+	float:left;
+
+}
+
+#foodmenu img
+{
+	width:14px;
+}
+
+#listfoodmenu
+{
+
+	margin-top:10px;
+	display: block;
+	width:600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#listfoodmenu th 
+{
+	
+	padding-left: 20px;
+	font-size:25px;
+	text-align: center;
+
+
+}
+
+#listfoodmenu tr 
+{
+
+	text-align: center;
+	margin-top: 15px;
+	padding-top: 20px;
+}
