@@ -1,6 +1,6 @@
 <?php
 
-include_once('classes/Connection.php');
+include_once('Connection.php');
 
 class Table
 {
@@ -44,14 +44,13 @@ public function AddTable()
 {
 
 
-$db = new Db();
+		$db = new Db();
 		
-		$sql = "insert into Restaurant (Name, NumberOfSeats, RestaurantId, ReservationId,) values('"
-		 . $db->conn->real_escape_string($this->m_sName). "', '" 
-		 . $db->conn->real_escape_string($this->m_iNumberOfSeats) ."', '" 
-		 . $db->conn->real_escape_string($this->m_iRestaurantId)	 . "', '"
-		 . $db->conn->real_escape_string($this->m_iReservationId)	 . ");";
-		
+		$sql = "insert into phpdb.Table (Name, NumberOfSeats, RestaurantId) values('"
+		 . $db->conn->real_escape_string($this->m_sName). "', " 
+		 . $db->conn->real_escape_string($this->m_iNumberOfSeats) .", " 
+		 . $db->conn->real_escape_string($this->m_iRestaurantId). ");";
+	
 		$db->conn->query($sql);
 
 }
@@ -61,7 +60,7 @@ public function getTables($pTableId)
 
 	$db = new Db();
 		
-	$sql = "select * from Tables where 
+	$sql = "select * from phpdb.Table where 
 	TableId = '" . $pTableId . "';";
 	$result = $db->conn->query($sql);
 

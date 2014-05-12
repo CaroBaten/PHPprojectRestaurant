@@ -1,10 +1,22 @@
 <?php
 
 include_once('classes/Restaurant.class.php');
-
+include_once('classes/Tables.class.php');
 session_start();
 
 $restaurant = new Restaurant();
+$table = new Table();
+
+
+
+if (isset($_POST['btnAdd']))
+{
+$table->Name 			= $_POST['name'];
+$table->NumberOfSeats 	= $_POST['numberOfSeats'];
+$table->RestaurantId	= $_SESSION['restaurantId'];
+
+$table->AddTable();
+}
 
 
 
