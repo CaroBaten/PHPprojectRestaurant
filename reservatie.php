@@ -32,10 +32,7 @@ if (isset($_POST['sendreservation']))
     }
 }
 
-?>
-
-
-<html lang="en">
+?><html lang="en">
  <head>
  	<meta charset="UTF-8">
  	<title>Restorapp</title>
@@ -93,7 +90,7 @@ if (isset($_POST['sendreservation']))
 	</div>    <!-- end subnav-->
 
 
-    <div id="content">
+    <div class="content">
 
 	<form action="<?php echo $_SERVER['PHP_SELF'];  ?>" method="post">
 
