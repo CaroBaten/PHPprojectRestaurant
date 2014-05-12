@@ -2,7 +2,11 @@
 
 include_once('classes/Restaurant.class.php');
 session_start();
-
+if($_SESSION['loggedin']==false)
+{
+	header("Location: index.php");
+	exit();
+}
 $restaurant = new Restaurant();
 if (isset($_POST['btnAdd'])){
 
@@ -33,7 +37,14 @@ if (!empty($_POST['name']))
 }
 if (isset($_POST['btnProceed'])){
 $_SESSION['restaurantId'] = $_POST['selectrestaurant'];
+$restaurantName = $restaurant->getRestaurantName($_POST['selectrestaurant']);
+$_SESSION['restaurantName'] = $restaurantName;
 
+if ($_SESSION['loggedin'])
+	{
+		header("Location: dashboard.php");
+		exit();
+	}
 }
 
 
@@ -51,7 +62,7 @@ $_SESSION['restaurantId'] = $_POST['selectrestaurant'];
  <body>
  	
 	<div id="login">
-	<a href="index.php"><img src="images/logodik.png" alt="logoklein">	</a>
+	<a href="dashboard.php"><img src="images/logodik.png" alt="logoklein">	</a>
 	
 	<?php echo "<p class='user'> Welkom ". $_SESSION['ownerName'] . " </p>" ?>
 

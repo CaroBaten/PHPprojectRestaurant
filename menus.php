@@ -2,7 +2,11 @@
 
 include_once('classes/Restaurant.class.php');
 session_start();
-
+if($_SESSION['loggedin']==false)
+{
+	header("Location: index.php");
+	exit();
+}
 $restaurant = new Restaurant();
 
 ?>
@@ -18,7 +22,7 @@ $restaurant = new Restaurant();
  <body>
  	
 	<div id="login">
-	<a href="index.php"><img src="images/logodik.png" alt="logoklein">	</a>
+	<a href="dashboard.php"><img src="images/logodik.png" alt="logoklein">	</a>
 
 	
 	
@@ -32,23 +36,11 @@ $restaurant = new Restaurant();
 
 	<div id="container">
 	<div id="selectrestaurant">
-
-		<form action="<?php echo $_SERVER['PHP_SELF'];  ?>" method="post">
- <select class='selectnav' id="selectrestaurant"> 
-                  
-                   <?php
-
-                   $result_array = $restaurant->getRestaurants($_SESSION['ownerid']);
-					print_r($result_array);
-                    foreach ($result_array as $resto){
-                    echo "<option value='". $resto['Name'] . "'>". $resto['Name'] ."</option>";
-                    }
-
-                   ?>
-		</select>
-
-               </form>
-		
+		<div id="selectrestaurant">
+              <?php                 
+                    echo "<h1>". $_SESSION['restaurantName']  . "</h1>";
+                                      ?>
+	</div>
 
 
 	</div>
@@ -58,6 +50,7 @@ $restaurant = new Restaurant();
 		<li><a href="tafelindeling.php">Tafelindeling </a></li>
 		<li><a href="menus.php">Menu's </a></li>
 		<li><a href="reservatie.php">Reservatie </a></li>
+		<li><a href="kiesrestaurant.php">Restaurants</a></li>
 	
 	</ul>
 	
