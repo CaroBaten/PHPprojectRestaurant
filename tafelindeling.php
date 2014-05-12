@@ -85,7 +85,7 @@ $table->AddTable();
              <form action="" method="post">
 		<input type="text" id ="name" name="name" placeholder="Naam" required/>
 		<input type="text" id ="numberOfSeats" name="numberOfSeats" placeholder="Aantal plaatsen" required/>
-		<?php echo "<input type='text' id='restaurantId' name='restaurantId' value='". $_SESSION['restaurantId'] . "' hidden/>"  ?>
+		<?php echo "<input type='text' id='restaurantId' name='restaurantId' hidden value='". $_SESSION['restaurantId'] . "'/>";  ?>
 			<input class="voegtoebtn" id="btnAdd" type="submit" value="Tafel Toevoegen" name = "btnAdd">
 
 		</form>

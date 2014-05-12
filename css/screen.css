@@ -350,7 +350,7 @@ h2
 {
 	
 
-	display:block;
+	
 	width:100%;
 	float:left;
 	
@@ -360,7 +360,7 @@ h2
 {
 	
 
-	display:block;
+	
 	width:100%;
 	float:left;
 }
@@ -372,4 +372,8 @@ h2
 	width:350px;;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+#restaurantId{
+	display:none;
 }
