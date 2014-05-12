@@ -25,8 +25,11 @@ public function __set($p_sProperty, $p_vValue)
 			break;
 
 			case 'NumberOfPeople':
-
+			if(is_numeric($p_vValue)){
 			$this->m_iNumberOfPeople = $p_vValue;
+			}else{
+				throw new exception("Aantal personen moet een getal zijn!");
+			}
 			break;
 
 			case 'Date':

@@ -31,7 +31,7 @@ if (isset($_POST['sendreservation']))
 	 } catch (Exception $e) {
     
       $feedback = $e->getMessage();
-      echo $feedback;
+     
 
     }
 }
@@ -88,6 +88,14 @@ if (isset($_POST['sendreservation']))
 
 
     <div class="content">
+    <div id="feedback">
+	<?php 
+	if (isset($feedback)){
+		echo "<p> " . $feedback . "</p>";
+	}
+
+	  ?>
+	</div>
 	<div id="reservationwrapper">
 	<form id= "addreservation" action="<?php echo $_SERVER['PHP_SELF'];  ?>" method="post">
 
