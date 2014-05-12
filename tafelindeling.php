@@ -105,6 +105,7 @@ $table->AddTable();
      echo "<tr>";
      echo "<td> " . $t['Name'] . " </td>";
      echo "<td> " . $t['NumberOfSeats'] . " </td>";
+
      echo "</tr>";
 
     }
@@ -153,9 +154,7 @@ $(document).ready(function(){
 				update +=  "<td> " + numberOfSeats + "</td>" ;
 				
 				update += "</tr>"	
-				
-		
-		
+					
 		$( "#listTables" ).append(update);
  			
  },
@@ -168,6 +167,7 @@ $(document).ready(function(){
  
  return(false); //AVOID PAGE RELOAD WHEN CLICKING ON SUBMIT BUTTON 
  }); 
+
 }); 
 
 </script>
