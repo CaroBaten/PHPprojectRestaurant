@@ -1,7 +1,13 @@
 <?php
 
 include_once('classes/Restaurant.class.php');
+include_once('classes/Menu.class.php');
 session_start();
+$menu = new Menu();
+$menu->Type = "drank";
+$allDrinks = $menu->getMenu($_SESSION['restaurantId']);
+
+
 if($_SESSION['loggedin']==false)
 {
 	header("Location: index.php");
@@ -74,12 +80,18 @@ $restaurant = new Restaurant();
 		  <th>Verwijderen</th>
 		</tr>
 
-		<tr class="highlight">
-			<td>Sprite</td>
-			<td>1,8</td>
-			<td> <img src="images/delete.png" alt=""></td>
+	
 
-		</tr>
+			<?php
+ 			foreach ($allDrinks as $d){
+ 			echo "	<tr class='highlight'>";
+ 			echo "<td>" . $d['Item'] . "</td>";
+ 			echo "<td>" . $d['Price'] . "</td>";
+ 			echo "<td> <img src='images/delete.png' alt=''></td>";
+ 			echo "</tr>";
+ 			}
+			?>
+		
 	
 	
 

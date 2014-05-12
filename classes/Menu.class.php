@@ -51,6 +51,30 @@ public function insertItem()
 		$db->conn->query($sql);
 	
 		}
+
+
+public function getMenu($p_RestaurantId)
+	{
+
+	$db = new Db();
+		
+	$sql = "select * from Menu where 
+	Restaurant_id = " . $p_RestaurantId . " and type = '" . $db->conn->real_escape_string($this->m_sType) . "' ;";
+	$result = $db->conn->query($sql);
+
+	$result_array=array();
+
+	// LOOP OVER ALL RECORDS AND PUT THEM IN AN ARRAY
+	while($row = $result->fetch_array())
+		{
+			$result_array[] = $row;
+		}
+
+	// RETURN RESULTS AS AN ARRAY
+	var_dump($result_array);
+	return($result_array);
+	}
+
 }
 
 
