@@ -95,7 +95,7 @@ public function getReservations($p_date)
 	{
 		
 		$db = new Db();
-		$query = "select * from Reservation where Date = '" . $p_date . "';";
+		$query = "select * from Reservation where Date = '" . $db->conn->real_escape_string($p_date) . "';";
 				
 		$result = $db->conn->query($query);
 		$result_array=array();
