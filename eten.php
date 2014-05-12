@@ -1,6 +1,4 @@
 <?php
-
-include_once('classes/Restaurant.class.php');
 include_once('classes/Menu.class.php');
 session_start();
 
@@ -14,9 +12,11 @@ $menu->Type = "eten";
 $allFood = $menu->getMenu($_SESSION['restaurantId']);
 
 
+if (isset($_POST['delete']))
+{
+$menu->deleteItem($_POST['itemid']);
+}
 
-
-$restaurant = new Restaurant();
 
 ?>
 
@@ -88,8 +88,9 @@ $restaurant = new Restaurant();
  			echo "	<tr class='highlight'>";
  			echo "<td>" . $d['Item'] . "</td>";
  			echo "<td>" . $d['Price'] . "</td>";
- 			echo "<td> <img src='images/delete.png' alt=''></td>";
+ 			echo "<td> <form action='' method='post'><input type='text' name='itemid' value='".$d['MenuId']. "' hidden><input type='submit' id='delete' name ='delete' value='delete'></form></td>";
  			echo "</tr>";
+
  			}
 			?>
 	
@@ -157,7 +158,7 @@ $.ajax({
 				update+= "<tr class='highlight'>";
 				update +=  "<td> " + item + "</td>" ;
 				update +=  "<td> " + price + "</td>" ;
-				update += "<td> <img src='images/delete.png' alt=''></td>";
+				update += "<td> <img class='del' src='images/delete.png' alt=''></td>";
 				update += "</tr>";	
 					
 		$( "#listfoodmenu" ).append(update);
