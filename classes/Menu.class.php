@@ -75,6 +75,18 @@ public function getMenu($p_RestaurantId)
 	return($result_array);
 	}
 
+	public function deleteItem($p_itemId)
+		
+		{
+
+		$db = new Db();
+		$sql = "delete from phpdb.Menu where ItemId =". $p_itemId . ";"; 
+
+
+		$db->conn->query($sql);
+	
+		}
+
 }
 
 
