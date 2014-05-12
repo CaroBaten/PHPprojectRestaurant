@@ -77,6 +77,17 @@ public function getTables($p_RestaurantId)
 	return($result_array);
 	}
 
+public function deleteItem($p_item)
+		
+		{
+
+		$db = new Db();
+		$sql = "delete from phpdb.Table where Name ='".  $db->conn->real_escape_string($p_item) . "';"; 
+
+		
+		$db->conn->query($sql);
+	
+		}
 }
 
 ?>

@@ -80,7 +80,7 @@ public function getMenu($p_RestaurantId)
 		{
 
 		$db = new Db();
-		$sql = "delete from phpdb.Menu where Item ='". $p_item . "';"; 
+		$sql = "delete from phpdb.Menu where Item ='".  $db->conn->real_escape_string($p_item) . "';"; 
 
 		
 		$db->conn->query($sql);

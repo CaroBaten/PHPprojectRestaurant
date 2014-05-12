@@ -1,4 +1,4 @@
-sx<?php
+<?php
 
 include_once('classes/Restaurant.class.php');
 include_once('classes/Tables.class.php');
@@ -13,17 +13,12 @@ $table = new Table();
 
 $allTables = $table->getTables($_SESSION['restaurantId']);
 
-/*
-if (isset($_POST['btnAdd']))
+if (isset($_POST['delete']))
 {
-$table->Name 			= $_POST['name'];
-$table->NumberOfSeats 	= $_POST['numberOfSeats'];
-$table->RestaurantId	= $_SESSION['restaurantId'];
-
-$table->AddTable();
+$table->deleteItem($_POST['itemid']);
+header('Location: '.$_SERVER['REQUEST_URI']);
 }
 
-*/
 
 
 ?><html lang="en">
@@ -102,6 +97,7 @@ $table->AddTable();
    	<tr>
    	<th> Naam </th>
    	<th> Aantal personen </th>
+   	<th> Verwijderen</th>
    	</tr>
 <?php
 
@@ -109,7 +105,7 @@ $table->AddTable();
      echo "<tr class='highlight'>";
      echo "<td> " . $t['Name'] . " </td>";
      echo "<td> " . $t['NumberOfSeats'] . " </td>";
-
+     echo "<td> <form action='' method='post'><input type='text' name='itemid' value='".$t['Name']. "' hidden><input type='submit' id='delete' name ='delete' value='delete'></form></td>";
      echo "</tr>";
 
     }
@@ -161,7 +157,7 @@ $(document).ready(function(){
 				update+= "<tr class='highlight'>"
 				update +=  "<td> " + name + "</td>" ;
 				update +=  "<td> " + numberOfSeats + "</td>" ;
-				
+				update += "<td> <form action='' method='post'><input type='text' name='itemid' value='" + name +"' hidden><input type='submit' id='delete' name ='delete' value='delete'></form></td>";
 				update += "</tr>"	
 					
 		$( "#listTables" ).append(update);
